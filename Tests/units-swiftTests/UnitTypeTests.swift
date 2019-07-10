@@ -217,6 +217,48 @@ class UnitTypeTests: XCTestCase {
         }
     }
 
+    func testUpdateUnits() {
+        do {
+            var units = try Units.default(language: "ru")
+
+            XCTAssertEqual(units.area.from(242), 242)
+            XCTAssertEqual(units.area.to(597.74), 597.74)
+            XCTAssertEqual(units.area.localization.short, "га")
+
+            let table = [
+                "length": "mile",
+                "area": "acre",
+                "weight": "tonn",
+                "machinery_weight": "pound",
+                "volume": "pint",
+                "tank_volume": "american_gallon",
+                "productivity": "tonn_per_ha",
+                "speed": "mile_per_hour",
+                "temperature": "fahrenheit",
+                "precipitation_level": "in",
+                "water_rate": "american_quart",
+                "fuel_consumption": "mile_per_uk_gallon",
+                "short_length": "ft",
+                "depth": "in",
+                "row_spacing": "cm",
+                "plant_spacing": "m"
+            ]
+            try units.update(units: table)
+
+            XCTAssertEqual(units.area.from(242), 597.74)
+            XCTAssertEqual(units.area.to(597.74), 241.99999999999997)
+            XCTAssertEqual(units.area.localization.short, "акр")
+
+            try units.update(units: table, language: "en")
+
+            XCTAssertEqual(units.area.from(242), 597.74)
+            XCTAssertEqual(units.area.to(597.74), 241.99999999999997)
+            XCTAssertEqual(units.area.localization.short, "acre")
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
     static var allTests = [
         ("testFromError", testFromError),
         ("testUnits", testUnits),
