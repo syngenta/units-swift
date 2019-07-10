@@ -7,13 +7,13 @@ This library can convert units of measurement for agro systems
 ### Instalation
 For installation you can use cocoapods
 
-```
-pod ' units-swift'
+```ruby
+pod 'units-swift'
 ```
 
 For using pods you need to add custom source
 
-```
+```ruby
 source 'https://github.com/cropio/cocoapods-specs.git'
 ```
 

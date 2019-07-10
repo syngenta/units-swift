@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/cropio/units-swift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  s.watchos.deployment_target = "3.0"
   s.swift_version = '5.0'
 
   s.source_files = 'Sources/units-swift/**/*.swift'
