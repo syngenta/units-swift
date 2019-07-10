@@ -27,7 +27,19 @@ public struct Units {
     public let waterRate: WaterRate
     public let weight: Weight
 
-    public init(units: [String: String], language: String) throws {
+    /**
+     Initialization of Units struct
+
+     - Parameters:
+        - units: If nil — Units will be created with default units
+        - language: Supported languages — "de", "en", "uk", "es", "hu", "ru", "pt"
+
+     - Throws:
+        - `UnitsError.notFound` — if `units` not contains needed types
+        - `UnitsError.unsupported` — if `units` conteins unsapported unit type
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "hu", "ru", "pt"
+     */
+    public init(units: [String: String]?, language: String) throws {
         do {
             let localizator = try UnitsLocalizator(language: language)
             try self.init(units: units, localizator: localizator)
@@ -38,30 +50,27 @@ public struct Units {
         }
     }
 
-    private init(units: [String: String], localizator: Localizator) throws {
+    private init(units: [String: String]? = nil, localizator: Localizator) throws {
         self.localizator = localizator
-        self.area = try .from(units: units, localizator: localizator)
-        self.depth = try .from(units: units, localizator: localizator)
-        self.fuelConsumption = try .from(units: units, localizator: localizator)
-        self.length = try .from(units: units, localizator: localizator)
-        self.machineryWeight = try .from(units: units, localizator: localizator)
-        self.plantSpacing = try .from(units: units, localizator: localizator)
-        self.precipitationLevel = try .from(units: units, localizator: localizator)
-        self.productivity = try .from(units: units, localizator: localizator)
-        self.rowSpacing = try .from(units: units, localizator: localizator)
-        self.shortLength = try .from(units: units, localizator: localizator)
-        self.speed = try .from(units: units, localizator: localizator)
-        self.tankVolume = try .from(units: units, localizator: localizator)
-        self.temperature = try .from(units: units, localizator: localizator)
-        self.volume = try .from(units: units, localizator: localizator)
-        self.waterRate = try .from(units: units, localizator: localizator)
-        self.weight = try .from(units: units, localizator: localizator)
-    }
 
-    private init(language: String) throws {
-        do {
-            let localizator = try UnitsLocalizator(language: language)
-
+        if let units = units {
+            self.area = try .from(units: units, localizator: localizator)
+            self.depth = try .from(units: units, localizator: localizator)
+            self.fuelConsumption = try .from(units: units, localizator: localizator)
+            self.length = try .from(units: units, localizator: localizator)
+            self.machineryWeight = try .from(units: units, localizator: localizator)
+            self.plantSpacing = try .from(units: units, localizator: localizator)
+            self.precipitationLevel = try .from(units: units, localizator: localizator)
+            self.productivity = try .from(units: units, localizator: localizator)
+            self.rowSpacing = try .from(units: units, localizator: localizator)
+            self.shortLength = try .from(units: units, localizator: localizator)
+            self.speed = try .from(units: units, localizator: localizator)
+            self.tankVolume = try .from(units: units, localizator: localizator)
+            self.temperature = try .from(units: units, localizator: localizator)
+            self.volume = try .from(units: units, localizator: localizator)
+            self.waterRate = try .from(units: units, localizator: localizator)
+            self.weight = try .from(units: units, localizator: localizator)
+        } else {
             self.localizator = localizator
             self.area = .from(.ha, localizator: localizator)
             self.depth = .from(.cm, localizator: localizator)
@@ -79,22 +88,55 @@ public struct Units {
             self.volume = .from(.liter, localizator: localizator)
             self.waterRate = .from(.literPerHa, localizator: localizator)
             self.weight = .from(.centner, localizator: localizator)
+        }
+    }
 
+    /**
+     Default units
+
+     - Parameters:
+        - language: Supported languages — "de", "en", "uk", "es", "hu", "ru", "pt"
+
+     - Throws:
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "hu", "ru", "pt"
+     */
+    public static func `default`(language: String) throws -> Units {
+        do {
+            let localizator = try UnitsLocalizator(language: language)
+            return try Units(localizator: localizator)
         } catch let error {
             throw UnitsError.localization(error: error)
         }
     }
 
-    public static func `default`(language: String) throws -> Units {
-        return try Units(language: language)
-    }
+    /**
+     Give abbility to update current units without updating language
 
-    mutating func update(units: [String: String]) throws {
+     - Parameters:
+        - units: Units table from cropio api
+
+     - Throws:
+        - `UnitsError.notFound` — if `units` not contains needed types
+        - `UnitsError.unsupported` — if `units` conteins unsapported unit type
+     */
+    public mutating func update(units: [String: String]) throws {
         let localizator = self.localizator
         self = try Units(units: units, localizator: localizator)
     }
 
-    mutating func update(units: [String: String], language: String) throws {
+    /**
+     Give abbility to update current units and language
+
+     - Parameters:
+        - units: Units table from cropio api
+        - language: Supported languages — "de", "en", "uk", "es", "hu", "ru", "pt"
+
+     - Throws:
+        - `UnitsError.notFound` — if `units` not contains needed types
+        - `UnitsError.unsupported` — if `units` conteins unsapported unit type
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "hu", "ru", "pt"
+     */
+    public mutating func update(units: [String: String], language: String) throws {
         self = try Units(units: units, language: language)
     }
 }
