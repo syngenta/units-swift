@@ -9,7 +9,7 @@ import Foundation
 
 public struct Units {
 
-    private var localizator: Localizator
+    public let localizator: Localizator
     public let area: Area
     public let depth: Depth
     public let fuelConsumption: FuelConsumption
@@ -71,7 +71,6 @@ public struct Units {
             self.waterRate = try .from(units: units, localizator: localizator)
             self.weight = try .from(units: units, localizator: localizator)
         } else {
-            self.localizator = localizator
             self.area = .from(.ha, localizator: localizator)
             self.depth = .from(.cm, localizator: localizator)
             self.fuelConsumption = .from(.literPer100km, localizator: localizator)
