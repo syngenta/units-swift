@@ -10,9 +10,79 @@ import XCTest
 
 class LocalizatorTests: XCTestCase {
 
+    // If failed — no key in Localizable.strings. Skip some keys because key equal to come value
+    func checkAllLocalizations(language: String) throws {
+        let localizator = try UnitsLocalizator(language: language)
+        XCTAssertNotEqual(localizator.ha.full, "ha_full")
+        XCTAssertNotEqual(localizator.acre.full, "acre_full")
+
+        XCTAssertNotEqual(localizator.in.full, "in_full")
+        XCTAssertNotEqual(localizator.ft.full, "ft_full")
+        XCTAssertNotEqual(localizator.mile.full, "mile_full")
+        XCTAssertNotEqual(localizator.mm.full, "mm_full")
+        XCTAssertNotEqual(localizator.cm.full, "cm_full")
+        XCTAssertNotEqual(localizator.m.full, "m_full")
+        XCTAssertNotEqual(localizator.km.full, "km_full")
+
+        XCTAssertNotEqual(localizator.kg.full, "kg_full")
+        XCTAssertNotEqual(localizator.pound.full, "pound_full")
+        XCTAssertNotEqual(localizator.centner.full, "centner_full")
+        XCTAssertNotEqual(localizator.ton.short, "ton")
+        XCTAssertNotEqual(localizator.ton.full, "ton_full")
+
+        XCTAssertNotEqual(localizator.pint.full, "pint_full")
+        XCTAssertNotEqual(localizator.quart.full, "quart_full")
+        XCTAssertNotEqual(localizator.liter.short, "liter")
+        XCTAssertNotEqual(localizator.liter.full, "liter_full")
+        XCTAssertNotEqual(localizator.britishGallon.short, "british_gallon")
+        XCTAssertNotEqual(localizator.britishGallon.full, "british_gallon_full")
+        XCTAssertNotEqual(localizator.americanGallon.short, "american_gallon")
+        XCTAssertNotEqual(localizator.americanGallon.full, "american_gallon_full")
+        XCTAssertNotEqual(localizator.bushel.short, "bushel")
+        XCTAssertNotEqual(localizator.bushel.full, "bushel_full")
+
+        XCTAssertNotEqual(localizator.celsius.short, "celsius")
+        XCTAssertNotEqual(localizator.celsius.full, "celsius_full")
+        XCTAssertNotEqual(localizator.fahrenheit.short, "fahrenheit")
+        XCTAssertNotEqual(localizator.fahrenheit.full, "fahrenheit_full")
+
+        XCTAssertNotEqual(localizator.bushelPerAcre.short, "bushel_per_acre")
+        XCTAssertNotEqual(localizator.bushelPerAcre.full, "bushel_per_acre_full")
+        XCTAssertNotEqual(localizator.tonPerHa.short, "ton_per_ha")
+        XCTAssertNotEqual(localizator.tonPerHa.full, "ton_per_ha_full")
+        XCTAssertNotEqual(localizator.centnerPerHa.short, "centner_per_ha")
+        XCTAssertNotEqual(localizator.centnerPerHa.full, "centner_per_ha_full")
+        XCTAssertNotEqual(localizator.usTonPerAcre.short, "us_ton_per_acre")
+        XCTAssertNotEqual(localizator.usTonPerAcre.full, "us_ton_per_acre_full")
+
+        XCTAssertNotEqual(localizator.mPerSec.short, "m_per_sec")
+        XCTAssertNotEqual(localizator.mPerSec.full, "m_per_sec_full")
+        XCTAssertNotEqual(localizator.milePerHour.short, "mile_per_hour")
+        XCTAssertNotEqual(localizator.milePerHour.full, "mile_per_hour_full")
+        XCTAssertNotEqual(localizator.kmPerHour.short, "km_per_hour")
+        XCTAssertNotEqual(localizator.kmPerHour.full, "km_per_hour_full")
+
+        XCTAssertNotEqual(localizator.literPerHa.short, "liter_per_ha")
+        XCTAssertNotEqual(localizator.literPerHa.full, "liter_per_ha_full")
+        XCTAssertNotEqual(localizator.americanPintPerAcre.short, "american_pint_per_acre")
+        XCTAssertNotEqual(localizator.americanPintPerAcre.full, "american_pint_per_acre_full")
+        XCTAssertNotEqual(localizator.americanQuart.short, "american_quart")
+        XCTAssertNotEqual(localizator.americanQuart.full, "american_quart_full")
+        XCTAssertNotEqual(localizator.literPer100km.short, "liter_per_100km")
+        XCTAssertNotEqual(localizator.literPer100km.full, "liter_per_100km_full")
+        XCTAssertNotEqual(localizator.kmPerLiter.short, "km_per_liter")
+        XCTAssertNotEqual(localizator.kmPerLiter.full, "km_per_liter_full")
+        XCTAssertNotEqual(localizator.milePerUsGallon.short, "mile_per_us_gallon")
+        XCTAssertNotEqual(localizator.milePerUsGallon.full, "mile_per_us_gallon_full")
+        XCTAssertNotEqual(localizator.milePerUkGallon.short, "mile_per_uk_gallon")
+        XCTAssertNotEqual(localizator.milePerUkGallon.full, "mile_per_uk_gallon_full")
+    }
+
     func testLocalizatorDE() {
         do {
             let localizator = try UnitsLocalizator(language: "de")
+            try self.checkAllLocalizations(language: "de")
+
             XCTAssertEqual(localizator.ha.short, "Hektar")
             XCTAssertEqual(localizator.ha.full, "Hektar")
             XCTAssertEqual(localizator.acre.short, "Acre")
@@ -82,7 +152,6 @@ class LocalizatorTests: XCTestCase {
             XCTAssertEqual(localizator.americanQuart.full, "US Quart pro Acre")
             XCTAssertEqual(localizator.literPerHa.short, "l/ha")
             XCTAssertEqual(localizator.literPerHa.full, "Liter pro Hektar")
-
             XCTAssertEqual(localizator.milePerUsGallon.short, "mpg")
             XCTAssertEqual(localizator.milePerUsGallon.full, "Meile pro US-Gallone")
             XCTAssertEqual(localizator.kmPerLiter.short, "km/l")
@@ -100,6 +169,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorEN() {
         do {
             let localizator = try UnitsLocalizator(language: "en")
+            try self.checkAllLocalizations(language: "en")
 
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "Inch")
@@ -124,6 +194,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorES() {
         do {
             let localizator = try UnitsLocalizator(language: "es")
+            try self.checkAllLocalizations(language: "es")
 
             XCTAssertEqual(localizator.in.short, "en")
             XCTAssertEqual(localizator.in.full, "Pulgada")
@@ -148,6 +219,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorHU() {
         do {
             let localizator = try UnitsLocalizator(language: "hu")
+            try self.checkAllLocalizations(language: "hu")
 
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "Inch")
@@ -172,6 +244,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorPT() {
         do {
             let localizator = try UnitsLocalizator(language: "pt")
+            try self.checkAllLocalizations(language: "pt")
 
             XCTAssertEqual(localizator.in.short, "polegadas")
             XCTAssertEqual(localizator.in.full, "Polegada")
@@ -196,6 +269,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorRU() {
         do {
             let localizator = try UnitsLocalizator(language: "ru")
+            try self.checkAllLocalizations(language: "ru")
 
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "Дюйм")
@@ -220,6 +294,7 @@ class LocalizatorTests: XCTestCase {
     func testLocalizatorUK() {
         do {
             let localizator = try UnitsLocalizator(language: "uk")
+            try self.checkAllLocalizations(language: "uk")
 
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "Дюйм")
@@ -241,6 +316,66 @@ class LocalizatorTests: XCTestCase {
         }
     }
 
+    func testLocalizatorPL() {
+        do {
+            let localizator = try UnitsLocalizator(language: "pl")
+            try self.checkAllLocalizations(language: "pl")
+
+            XCTAssertEqual(localizator.in.short, "in")
+            XCTAssertEqual(localizator.in.full, "Cal")
+            XCTAssertEqual(localizator.ft.short, "ft")
+            XCTAssertEqual(localizator.ft.full, "Stopa")
+            XCTAssertEqual(localizator.mile.short, "mile")
+            XCTAssertEqual(localizator.mile.full, "Mila")
+            XCTAssertEqual(localizator.mm.short, "mm")
+            XCTAssertEqual(localizator.mm.full, "Milimetr")
+            XCTAssertEqual(localizator.cm.short, "cm")
+            XCTAssertEqual(localizator.cm.full, "Centymetr")
+            XCTAssertEqual(localizator.m.short, "m")
+            XCTAssertEqual(localizator.m.full, "Metr")
+            XCTAssertEqual(localizator.km.short, "km")
+            XCTAssertEqual(localizator.km.full, "Kilometr")
+
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
+    func testLocalizatorET() {
+        do {
+            let localizator = try UnitsLocalizator(language: "et")
+            try self.checkAllLocalizations(language: "et")
+
+            XCTAssertEqual(localizator.in.short, "in")
+            XCTAssertEqual(localizator.in.full, "Toll")
+            XCTAssertEqual(localizator.ft.short, "jalg")
+            XCTAssertEqual(localizator.ft.full, "Jalg")
+            XCTAssertEqual(localizator.mile.short, "mi")
+            XCTAssertEqual(localizator.mile.full, "Miil")
+            XCTAssertEqual(localizator.mm.short, "mm")
+            XCTAssertEqual(localizator.mm.full, "Millimeeter")
+            XCTAssertEqual(localizator.cm.short, "cm")
+            XCTAssertEqual(localizator.cm.full, "Sentimeeter")
+            XCTAssertEqual(localizator.m.short, "m")
+            XCTAssertEqual(localizator.m.full, "Meeter")
+            XCTAssertEqual(localizator.km.short, "km")
+            XCTAssertEqual(localizator.km.full, "Kilomeeter")
+
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
+    // Is all language tested? Failed if not
+    func testCheckTestCount() {
+        let main = Bundle(for: UnitsLocalizator.self)
+        let localizable = main.path(forResource: "Localizable", ofType: "bundle")
+        .flatMap { Bundle(path: $0) }
+
+        XCTAssertEqual(localizable?.localizations, ["de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"])
+        XCTAssertEqual(localizable?.localizations.count, LocalizatorTests.allTests.count - 1)
+    }
+
     static var allTests = [
         ("testLocalizatorDE", testLocalizatorDE),
         ("testLocalizatorEN", testLocalizatorEN),
@@ -248,6 +383,9 @@ class LocalizatorTests: XCTestCase {
         ("testLocalizatorHU", testLocalizatorHU),
         ("testLocalizatorPT", testLocalizatorPT),
         ("testLocalizatorRU", testLocalizatorRU),
-        ("testLocalizatorUK", testLocalizatorUK)
+        ("testLocalizatorUK", testLocalizatorUK),
+        ("testLocalizatorPL", testLocalizatorPL),
+        ("testLocalizatorET", testLocalizatorET),
+        ("testCheckTestCount", testCheckTestCount)
     ]
 }
