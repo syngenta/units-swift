@@ -53,25 +53,29 @@ public struct Productivity: UnitType {
         self.localization = localization
     }
 
-    public func from(_ base: Double?, crop: String) -> Double? {
-        return base.map { value -> Double in
-            switch self.settings {
-            case .bushelPerAcre:
-                return self.fromBase(value, crop: crop)
-            default:
-                return value * self.settings.factor
-            }
+    public func from(_ value: Double?, crop: String) -> Double? {
+        value.map { self.from($0, crop: crop) }
+    }
+
+    public func from(_ value: Double, crop: String) -> Double {
+        switch self.settings {
+        case .bushelPerAcre:
+            return self.from(value: value, crop: crop)
+        default:
+            return value * self.settings.factor
         }
     }
 
     public func to(_ value: Double?, crop: String) -> Double? {
-        return value.map { value -> Double in
-            switch self.settings {
-            case .bushelPerAcre:
-                return self.toBase(value, crop: crop)
-            default:
-                return value / self.settings.factor
-            }
+        value.map { self.to($0, crop: crop) }
+    }
+
+    public func to(_ value: Double, crop: String) -> Double {
+        switch self.settings {
+        case .bushelPerAcre:
+            return self.to(value: value, crop: crop)
+        default:
+            return value / self.settings.factor
         }
     }
 
@@ -106,19 +110,17 @@ public struct Productivity: UnitType {
         "triticale_winter": 4.23960
     ]
 
-    private func fromBase(_ value: Double, crop: String) -> Double {
+    private func from(value: Double, crop: String) -> Double {
         guard let factor = self.factors[crop] else {
             return value * 1.487611336
         }
-
         return value * (factor / 2.47)
     }
 
-    private func toBase(_ value: Double, crop: String) -> Double {
+    private func to(value: Double, crop: String) -> Double {
         guard let factor = self.factors[crop] else {
             return value / 1.487611336
         }
-
         return value / (factor / 2.47)
     }
 }

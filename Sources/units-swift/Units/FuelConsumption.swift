@@ -48,26 +48,24 @@ public struct FuelConsumption: TransformableUnitType {
         self.localization = localization
     }
 
-    private func transform(_ value: Double?) -> Double? {
-        return value.map { value -> Double in
-            switch self.settings {
-            case .kmPerLiter:
-                return 100 / value
-            case .milePerUsGallon:
-                return 235.214582 / value
-            case .milePerUkGallon:
-                return 282.480936 / value
-            case .literPer100km:
-                return value
-            }
+    private func transform(_ value: Double) -> Double {
+        switch self.settings {
+        case .kmPerLiter:
+            return 100 / value
+        case .milePerUsGallon:
+            return 235.214582 / value
+        case .milePerUkGallon:
+            return 282.480936 / value
+        case .literPer100km:
+            return value
         }
     }
 
-    public func from(_ base: Double?) -> Double? {
-        return self.transform(base)
+    public func from(_ value: Double) -> Double {
+        self.transform(value)
     }
 
-    public func to(_ value: Double?) -> Double? {
-        return self.transform(value)
+    public func to(_ value: Double) -> Double {
+        self.transform(value)
     }
 }

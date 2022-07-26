@@ -23,8 +23,8 @@ public protocol UnitType {
 }
 
 public protocol TransformableUnitType: UnitType {
-    func from(_ base: Double?) -> Double?
-    func to(_ value: Double?) -> Double?
+    func from(_ value: Double) -> Double
+    func to(_ value: Double) -> Double
 }
 
 extension UnitType {
@@ -50,13 +50,26 @@ extension UnitType {
     }
 }
 
+// Default converter. (Temperature, FuelConsumption, Productivity use custom)
 public extension TransformableUnitType {
 
-    func from(_ base: Double?) -> Double? {
-        return base.map { $0 * self.settings.factor }
+    func from(_ value: Double) -> Double {
+        value * self.settings.factor
+    }
+
+    func to(_ value: Double) -> Double {
+        value / self.settings.factor
+    }
+}
+
+// Extension for optional values
+public extension TransformableUnitType {
+
+    func from(_ value: Double?) -> Double? {
+        value.map { self.from($0) }
     }
 
     func to(_ value: Double?) -> Double? {
-        return value.map { $0 / self.settings.factor }
+        value.map { self.to($0) }
     }
 }

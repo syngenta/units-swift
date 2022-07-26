@@ -42,21 +42,17 @@ public struct Temperature: TransformableUnitType {
         self.localization = localization
     }
 
-    public func from(_ base: Double?) -> Double? {
-        return base.map { value -> Double in
-            if self.settings == .fahrenheit {
-                return value * (9.0 / 5.0) + 32.0
-            }
-            return value
+    public func from(_ value: Double) -> Double {
+        if self.settings == .fahrenheit {
+            return value * (9.0 / 5.0) + 32.0
         }
+        return value
     }
 
-    public func to(_ value: Double?) -> Double? {
-        return value.map { value -> Double in
-            if self.settings == .fahrenheit {
-                return (value - 32.0) / 1.8
-            }
-            return value
+    public func to(_ value: Double) -> Double {
+        if self.settings == .fahrenheit {
+            return (value - 32.0) / 1.8
         }
+        return value
     }
 }
