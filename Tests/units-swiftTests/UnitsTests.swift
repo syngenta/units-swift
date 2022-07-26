@@ -458,7 +458,7 @@ final class UnitsTests: XCTestCase {
             XCTFail("error - \(error)")
         }
 
-        func bpa(crop: String) -> Double? {
+        func bpa(crop: String) -> Double {
             do {
                 let bushelPerAcre = try Productivity.from("bushel_per_acre", localizator: self.localizator)
                 return bushelPerAcre.from(3932.9598552241814, crop: crop)
@@ -468,7 +468,7 @@ final class UnitsTests: XCTestCase {
             return 0
         }
 
-        func bpaTo(crop: String, _ value: Double) -> Double? {
+        func bpaTo(crop: String, _ value: Double) -> Double {
             do {
                 let bushelPerAcre = try Productivity.from("bushel_per_acre", localizator: self.localizator)
                 return bushelPerAcre.to(value, crop: crop)

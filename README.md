@@ -41,7 +41,7 @@ let table = [
 ]
 
 do {
-	// Units support this languages - "de", "en", "uk", "es", "hu", "ru", "pt"
+	// Units support this languages - "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
 	let units = try Units(units: table, language: "es")
 
 	print(units.area.from(242)) // 597.74

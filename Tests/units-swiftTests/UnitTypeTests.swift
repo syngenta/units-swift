@@ -259,11 +259,27 @@ class UnitTypeTests: XCTestCase {
         }
     }
 
+    func testOptionalExtension() {
+        do {
+            let units = try Units.default(language: "uk")
+
+            let value: Double? = 10
+            XCTAssertEqual(units.area.from(value), 10)
+            XCTAssertEqual(units.area.to(value), 10)
+
+            XCTAssertEqual(units.productivity.from(value, crop: ""), 10)
+            XCTAssertEqual(units.productivity.to(value, crop: ""), 10)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
     static var allTests = [
         ("testFromError", testFromError),
         ("testUnits", testUnits),
         ("testDefaultUnits", testDefaultUnits),
         ("testDefaultUnitsError", testDefaultUnitsError),
-        ("testUnitsError", testUnitsError)
+        ("testUnitsError", testUnitsError),
+        ("testOptionalExtension", testOptionalExtension)
     ]
 }
