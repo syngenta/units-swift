@@ -21,6 +21,12 @@ class UnitsLocalizator: Localizator {
             full: self.localized("acre_full")
         )
     }
+    var decare: Localization {
+        return .init(
+            short: self.localized("decare"),
+            full: self.localized("decare_full")
+        )
+    }
 
     // MARK: Length
     var `in`: Localization {
@@ -167,6 +173,12 @@ class UnitsLocalizator: Localizator {
         return .init(
             short: self.localized("centner_per_ha"),
             full: self.localized("centner_per_ha_full")
+        )
+    }
+    var kgPerDecare: Localization {
+        return .init(
+            short: self.localized("kg_per_decare"),
+            full: self.localized("kg_per_decare_full")
         )
     }
 

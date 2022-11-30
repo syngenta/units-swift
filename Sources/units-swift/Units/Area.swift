@@ -12,17 +12,20 @@ public struct Area: TransformableUnitType {
     public enum Settings: UnitTypeSettings {
         case ha
         case acre
+        case decare
 
         public var factor: Double {
             switch self {
             case .ha: return 1.0
             case .acre: return 2.47
+            case .decare: return 10.0
             }
         }
 
         public static var mappings: [String: Settings] = [
             "ha": .ha,
-            "acre": .acre
+            "acre": .acre,
+            "decare": .decare
         ]
     }
 
@@ -34,6 +37,7 @@ public struct Area: TransformableUnitType {
         switch settings {
         case .ha: return localizator.ha
         case .acre: return localizator.acre
+        case .decare: return localizator.decare
         }
     }
 

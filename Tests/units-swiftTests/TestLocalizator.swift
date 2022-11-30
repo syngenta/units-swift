@@ -9,9 +9,11 @@ import Foundation
 @testable import units_swift
 
 struct TestLocalizator: Localizator {
+
     // MARK: Area
     var ha: Localization { return .init(short: "", full: "") }
     var acre: Localization { return .init(short: "", full: "") }
+    var decare: Localization { return .init(short: "", full: "") }
 
     // MARK: Length
     var `in`: Localization { return .init(short: "", full: "") }
@@ -45,6 +47,7 @@ struct TestLocalizator: Localizator {
     var usTonPerAcre: Localization { return .init(short: "", full: "") }
     var tonPerHa: Localization { return .init(short: "", full: "") }
     var centnerPerHa: Localization { return .init(short: "", full: "") }
+    var kgPerDecare: Localization { return .init(short: "", full: "") }
 
     // MARK: Speed
     var mPerSec: Localization { return .init(short: "", full: "") }
