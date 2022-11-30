@@ -11,6 +11,7 @@ public protocol Localizator {
     // MARK: Area
     var ha: Localization { get }
     var acre: Localization { get }
+    var decare: Localization { get }
 
     // MARK: Length
     var `in`: Localization { get }
@@ -44,6 +45,7 @@ public protocol Localizator {
     var usTonPerAcre: Localization { get }
     var tonPerHa: Localization { get }
     var centnerPerHa: Localization { get }
+    var kgPerDecare: Localization { get }
 
     // MARK: Speed
     var mPerSec: Localization { get }

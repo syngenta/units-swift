@@ -14,6 +14,7 @@ public struct Productivity: UnitType {
         case tonnPerHa
         case usTonnPerAcre
         case bushelPerAcre
+        case kgPerDecare
 
         public var factor: Double {
             switch self {
@@ -21,6 +22,7 @@ public struct Productivity: UnitType {
             case .tonnPerHa: return 0.1
             case .usTonnPerAcre: return 0.224
             case .bushelPerAcre: return 0.0
+            case .kgPerDecare: return 10.0
             }
         }
 
@@ -28,7 +30,8 @@ public struct Productivity: UnitType {
             "centner_per_ha": .centnerPerHa,
             "tonn_per_ha": .tonnPerHa,
             "us_tonn_per_acre": .usTonnPerAcre,
-            "bushel_per_acre": .bushelPerAcre
+            "bushel_per_acre": .bushelPerAcre,
+            "kg_per_decare": .kgPerDecare
         ]
     }
 
@@ -42,6 +45,7 @@ public struct Productivity: UnitType {
         case .tonnPerHa: return localizator.tonPerHa
         case .usTonnPerAcre: return localizator.usTonPerAcre
         case .bushelPerAcre: return localizator.bushelPerAcre
+        case .kgPerDecare: return localizator.kgPerDecare
         }
     }
 

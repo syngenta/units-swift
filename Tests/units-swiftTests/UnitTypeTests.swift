@@ -274,6 +274,38 @@ class UnitTypeTests: XCTestCase {
         }
     }
 
+    func testDekareUnits() {
+        do {
+            var units = try Units.default(language: "uk")
+            XCTAssertEqual(units.area.localization.full, "Гектар")
+
+            let table = [
+                "length": "mile",
+                "area": "decare", // <<<
+                "weight": "tonn",
+                "machinery_weight": "pound",
+                "volume": "pint",
+                "tank_volume": "american_gallon",
+                "productivity": "kg_per_decare", // <<<
+                "speed": "mile_per_hour",
+                "temperature": "fahrenheit",
+                "precipitation_level": "in",
+                "water_rate": "american_quart",
+                "fuel_consumption": "mile_per_uk_gallon",
+                "short_length": "ft",
+                "depth": "in",
+                "row_spacing": "cm",
+                "plant_spacing": "m"
+            ]
+            try units.update(units: table)
+
+            XCTAssertEqual(units.area.localization.full, "Декар")
+            XCTAssertEqual(units.productivity.localization.full, "Кілограм на декар")
+        } catch {
+            XCTFail("error - \(error)")
+        }
+    }
+
     static var allTests = [
         ("testFromError", testFromError),
         ("testUnits", testUnits),

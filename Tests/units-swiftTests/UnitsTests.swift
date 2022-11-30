@@ -326,6 +326,14 @@ final class UnitsTests: XCTestCase {
             XCTFail("error - \(error)")
         }
 
+        do {
+            let decare = try Area.from("decare", localizator: self.localizator)
+            XCTAssertEqual(decare.from(3773.3900288276077), 37733.900288276077)
+            XCTAssertEqual(decare.to(3921.8913961567305), 392.18913961567305)
+        } catch {
+            XCTFail("error - \(error)")
+        }
+
     }
 
     func testLength() {
@@ -455,6 +463,14 @@ final class UnitsTests: XCTestCase {
             XCTAssertEqual(tonnPerHa.from(2149.258498897983, crop: ""), 214.92584988979831)
             XCTAssertEqual(tonnPerHa.to(214.92584988979831, crop: ""), 2149.258498897983)
         } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let kgPerDecare = try Productivity.from("kg_per_decare", localizator: self.localizator)
+            XCTAssertEqual(kgPerDecare.from(7675.370757814004, crop: ""), 76753.70757814004)
+            XCTAssertEqual(kgPerDecare.to(2149.2584988979831, crop: ""), 214.9258498897983)
+        } catch {
             XCTFail("error - \(error)")
         }
 
