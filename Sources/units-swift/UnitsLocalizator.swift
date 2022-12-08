@@ -7,21 +7,21 @@
 
 import Foundation
 
-class UnitsLocalizator: Localizator {
+public class UnitsLocalizator: Localizator {
     // MARK: Area
-    var ha: Localization {
+    public var ha: Localization {
         return .init(
             short: self.localized("ha"),
             full: self.localized("ha_full")
         )
     }
-    var acre: Localization {
+    public var acre: Localization {
         return .init(
             short: self.localized("acre"),
             full: self.localized("acre_full")
         )
     }
-    var decare: Localization {
+    public var decare: Localization {
         return .init(
             short: self.localized("decare"),
             full: self.localized("decare_full")
@@ -29,43 +29,43 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Length
-    var `in`: Localization {
+    public var `in`: Localization {
         return .init(
             short: self.localized("in"),
             full: self.localized("in_full")
         )
     }
-    var ft: Localization {
+    public var ft: Localization {
         return .init(
             short: self.localized("ft"),
             full: self.localized("ft_full")
         )
     }
-    var mile: Localization {
+    public var mile: Localization {
         return .init(
             short: self.localized("mile"),
             full: self.localized("mile_full")
         )
     }
-    var mm: Localization {
+    public var mm: Localization {
         return .init(
             short: self.localized("mm"),
             full: self.localized("mm_full")
         )
     }
-    var cm: Localization {
+    public var cm: Localization {
         return .init(
             short: self.localized("cm"),
             full: self.localized("cm_full")
         )
     }
-    var m: Localization {
+    public var m: Localization {
         return .init(
             short: self.localized("m"),
             full: self.localized("m_full")
         )
     }
-    var km: Localization {
+    public var km: Localization {
         return .init(
             short: self.localized("km"),
             full: self.localized("km_full")
@@ -73,25 +73,25 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Weight
-    var pound: Localization {
+    public var pound: Localization {
         return .init(
             short: self.localized("pound"),
             full: self.localized("pound_full")
         )
     }
-    var kg: Localization {
+    public var kg: Localization {
         return .init(
             short: self.localized("kg"),
             full: self.localized("kg_full")
         )
     }
-    var centner: Localization {
+    public var centner: Localization {
         return .init(
             short: self.localized("centner"),
             full: self.localized("centner_full")
         )
     }
-    var ton: Localization {
+    public var ton: Localization {
         return .init(
             short: self.localized("ton"),
             full: self.localized("ton_full")
@@ -99,37 +99,37 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Liquids
-    var pint: Localization {
+    public var pint: Localization {
         return .init(
             short: self.localized("pint"),
             full: self.localized("pint_full")
         )
     }
-    var liter: Localization {
+    public var liter: Localization {
         return .init(
             short: self.localized("liter"),
             full: self.localized("liter_full")
         )
     }
-    var bushel: Localization {
+    public var bushel: Localization {
         return .init(
             short: self.localized("bushel"),
             full: self.localized("bushel_full")
         )
     }
-    var quart: Localization {
+    public var quart: Localization {
         return .init(
             short: self.localized("quart"),
             full: self.localized("quart_full")
         )
     }
-    var americanGallon: Localization {
+    public var americanGallon: Localization {
         return .init(
             short: self.localized("american_gallon"),
             full: self.localized("american_gallon_full")
         )
     }
-    var britishGallon: Localization {
+    public var britishGallon: Localization {
         return .init(
             short: self.localized("british_gallon"),
             full: self.localized("british_gallon_full")
@@ -137,13 +137,13 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Temperature
-    var celsius: Localization {
+    public var celsius: Localization {
         return .init(
             short: self.localized("celsius"),
             full: self.localized("celsius_full")
         )
     }
-    var fahrenheit: Localization {
+    public var fahrenheit: Localization {
         return .init(
             short: self.localized("fahrenheit"),
             full: self.localized("fahrenheit_full")
@@ -151,31 +151,31 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Productivity
-    var bushelPerAcre: Localization {
+    public var bushelPerAcre: Localization {
         return .init(
             short: self.localized("bushel_per_acre"),
             full: self.localized("bushel_per_acre_full")
         )
     }
-    var usTonPerAcre: Localization {
+    public var usTonPerAcre: Localization {
         return .init(
             short: self.localized("us_ton_per_acre"),
             full: self.localized("us_ton_per_acre_full")
         )
     }
-    var tonPerHa: Localization {
+    public var tonPerHa: Localization {
         return .init(
             short: self.localized("ton_per_ha"),
             full: self.localized("ton_per_ha_full")
         )
     }
-    var centnerPerHa: Localization {
+    public var centnerPerHa: Localization {
         return .init(
             short: self.localized("centner_per_ha"),
             full: self.localized("centner_per_ha_full")
         )
     }
-    var kgPerDecare: Localization {
+    public var kgPerDecare: Localization {
         return .init(
             short: self.localized("kg_per_decare"),
             full: self.localized("kg_per_decare_full")
@@ -183,19 +183,19 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: Speed
-    var mPerSec: Localization {
+    public var mPerSec: Localization {
         return .init(
             short: self.localized("m_per_sec"),
             full: self.localized("m_per_sec_full")
         )
     }
-    var milePerHour: Localization {
+    public var milePerHour: Localization {
         return .init(
             short: self.localized("mile_per_hour"),
             full: self.localized("mile_per_hour_full")
         )
     }
-    var kmPerHour: Localization {
+    public var kmPerHour: Localization {
         return .init(
             short: self.localized("km_per_hour"),
             full: self.localized("km_per_hour_full")
@@ -203,44 +203,44 @@ class UnitsLocalizator: Localizator {
     }
 
     // MARK: FuelConsumption
-    var americanPintPerAcre: Localization {
+    public var americanPintPerAcre: Localization {
         return .init(
             short: self.localized("american_pint_per_acre"),
             full: self.localized("american_pint_per_acre_full")
         )
     }
-    var americanQuart: Localization {
+    public var americanQuart: Localization {
         return .init(
             short: self.localized("american_quart"),
             full: self.localized("american_quart_full")
         )
     }
-    var literPerHa: Localization {
+    public var literPerHa: Localization {
         return .init(
             short: self.localized("liter_per_ha"),
             full: self.localized("liter_per_ha_full")
         )
     }
 
-    var milePerUsGallon: Localization {
+    public var milePerUsGallon: Localization {
         return .init(
             short: self.localized("mile_per_us_gallon"),
             full: self.localized("mile_per_us_gallon_full")
         )
     }
-    var kmPerLiter: Localization {
+    public var kmPerLiter: Localization {
         return .init(
             short: self.localized("km_per_liter"),
             full: self.localized("km_per_liter_full")
         )
     }
-    var literPer100km: Localization {
+    public var literPer100km: Localization {
         return .init(
             short: self.localized("liter_per_100km"),
             full: self.localized("liter_per_100km_full")
         )
     }
-    var milePerUkGallon: Localization {
+    public var milePerUkGallon: Localization {
         return .init(
             short: self.localized("mile_per_uk_gallon"),
             full: self.localized("mile_per_uk_gallon_full")
