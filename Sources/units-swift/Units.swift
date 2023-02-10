@@ -26,6 +26,7 @@ public struct Units {
     public let volume: Volume
     public let waterRate: WaterRate
     public let weight: Weight
+    public let yieldWeight: YieldWeight
 
     /**
      Initialization of Units struct
@@ -70,6 +71,7 @@ public struct Units {
             self.volume = try .from(units: units, localizator: localizator)
             self.waterRate = try .from(units: units, localizator: localizator)
             self.weight = try .from(units: units, localizator: localizator)
+            self.yieldWeight = try .from(units: units, localizator: localizator)
         } else {
             self.area = .from(.ha, localizator: localizator)
             self.depth = .from(.cm, localizator: localizator)
@@ -87,6 +89,7 @@ public struct Units {
             self.volume = .from(.liter, localizator: localizator)
             self.waterRate = .from(.literPerHa, localizator: localizator)
             self.weight = .from(.centner, localizator: localizator)
+            self.yieldWeight = .from(.centner, localizator: localizator)
         }
     }
 

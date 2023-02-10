@@ -1,13 +1,13 @@
 //
-//  Weight.swift
+//  YieldWeight.swift
 //  units-swift
 //
-//  Created by Evegeny Kalashnikov on 7/5/19.
+//  Created by Evegeny Kalashnikov on 10.02.2023.
 //
 
 import Foundation
 
-public struct Weight: TransformableUnitType {
+public struct YieldWeight: TransformableUnitType {
 
     public enum Settings: UnitTypeSettings {
         case kg
@@ -17,10 +17,10 @@ public struct Weight: TransformableUnitType {
 
         public var factor: Double {
             switch self {
-            case .kg: return 1000.0
-            case .centner: return 10.0
-            case .pound: return 454.545
-            case .tonn: return 1.0
+            case .kg: return 100.0
+            case .centner: return 1.0
+            case .pound: return 220.462
+            case .tonn: return 0.1
             }
         }
 

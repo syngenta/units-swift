@@ -276,6 +276,41 @@ final class UnitsTests: XCTestCase {
         XCTAssertEqual(Weight.code, "weight")
         do {
             let tonn = try Weight.from("tonn", localizator: self.localizator)
+            XCTAssertEqual(tonn.from(2548.0763233671714), 2548.0763233671714)
+            XCTAssertEqual(tonn.to(254.80763233671715), 254.80763233671715)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let pound = try Weight.from("pound", localizator: self.localizator)
+            XCTAssertEqual(pound.from(3346.9854337306824), 1521355.4939751131)
+            XCTAssertEqual(pound.to(737883.1026911336), 1623.3444492649433)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let centner = try Weight.from("centner", localizator: self.localizator)
+            XCTAssertEqual(centner.from(53.75046269789519), 537.5046269789518)
+            XCTAssertEqual(centner.to(53.75046269789519), 5.375046269789519)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let kg = try Weight.from("kg", localizator: self.localizator)
+            XCTAssertEqual(kg.from(2253.213100029519), 2253213.100029519)
+            XCTAssertEqual(kg.to(225321.31000295188), 225.3213100029519)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
+    func testYieldWeight() {
+        XCTAssertEqual(Weight.code, "weight")
+        do {
+            let tonn = try YieldWeight.from("tonn", localizator: self.localizator)
             XCTAssertEqual(tonn.from(2548.0763233671714), 254.80763233671715)
             XCTAssertEqual(tonn.to(254.80763233671715), 2548.0763233671714)
         } catch let error {
@@ -283,7 +318,7 @@ final class UnitsTests: XCTestCase {
         }
 
         do {
-            let pound = try Weight.from("pound", localizator: self.localizator)
+            let pound = try YieldWeight.from("pound", localizator: self.localizator)
             XCTAssertEqual(pound.from(3346.9854337306824), 737883.1026911336)
             XCTAssertEqual(pound.to(737883.1026911336), 3346.9854337306824)
         } catch let error {
@@ -291,7 +326,7 @@ final class UnitsTests: XCTestCase {
         }
 
         do {
-            let centner = try Weight.from("centner", localizator: self.localizator)
+            let centner = try YieldWeight.from("centner", localizator: self.localizator)
             XCTAssertEqual(centner.from(53.75046269789519), 53.75046269789519)
             XCTAssertEqual(centner.to(53.75046269789519), 53.75046269789519)
         } catch let error {
@@ -299,13 +334,12 @@ final class UnitsTests: XCTestCase {
         }
 
         do {
-            let kg = try Weight.from("kg", localizator: self.localizator)
+            let kg = try YieldWeight.from("kg", localizator: self.localizator)
             XCTAssertEqual(kg.from(2253.213100029519), 225321.31000295188)
             XCTAssertEqual(kg.to(225321.31000295188), 2253.213100029519)
         } catch let error {
             XCTFail("error - \(error)")
         }
-
     }
 
     func testArea() {
@@ -571,6 +605,7 @@ final class UnitsTests: XCTestCase {
         ("testPlantSpacing", testPlantSpacing),
         ("testMachineryWeight", testMachineryWeight),
         ("testWeight", testWeight),
+        ("testYieldWeight", testYieldWeight),
         ("testArea", testArea),
         ("testLength", testLength),
         ("testRowSpacing", testRowSpacing),
