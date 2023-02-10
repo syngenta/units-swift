@@ -378,13 +378,38 @@ class LocalizatorTests: XCTestCase {
         }
     }
 
+    func testLocalizatorBG() {
+        do {
+            let localizator = try UnitsLocalizator(language: "bg")
+            try self.checkAllLocalizations(language: "bg")
+
+            XCTAssertEqual(localizator.in.short, "в")
+            XCTAssertEqual(localizator.in.full, "Инч")
+            XCTAssertEqual(localizator.ft.short, "ft")
+            XCTAssertEqual(localizator.ft.full, "Фут")
+            XCTAssertEqual(localizator.mile.short, "ми")
+            XCTAssertEqual(localizator.mile.full, "Миля")
+            XCTAssertEqual(localizator.mm.short, "мм")
+            XCTAssertEqual(localizator.mm.full, "Милиметър")
+            XCTAssertEqual(localizator.cm.short, "см")
+            XCTAssertEqual(localizator.cm.full, "Сантиметър")
+            XCTAssertEqual(localizator.m.short, "м")
+            XCTAssertEqual(localizator.m.full, "Метър")
+            XCTAssertEqual(localizator.km.short, "км")
+            XCTAssertEqual(localizator.km.full, "Километър")
+
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
     // Is all language tested? Failed if not
     func testCheckTestCount() {
         let main = Bundle(for: UnitsLocalizator.self)
         let localizable = main.path(forResource: "Localizable", ofType: "bundle")
         .flatMap { Bundle(path: $0) }
 
-        XCTAssertEqual(localizable?.localizations, ["de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"])
+        XCTAssertEqual(localizable?.localizations, ["de", "en", "uk", "es", "et", "bg", "hu", "pl", "ru", "pt"])
         XCTAssertEqual(localizable?.localizations.count, LocalizatorTests.allTests.count - 1)
     }
 
@@ -398,6 +423,7 @@ class LocalizatorTests: XCTestCase {
         ("testLocalizatorUK", testLocalizatorUK),
         ("testLocalizatorPL", testLocalizatorPL),
         ("testLocalizatorET", testLocalizatorET),
+        ("testLocalizatorBG", testLocalizatorBG),
         ("testCheckTestCount", testCheckTestCount)
     ]
 }

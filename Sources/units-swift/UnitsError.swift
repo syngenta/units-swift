@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UnitsError: Error {
+public enum UnitsError: Error {
     case notFound(type: String, inTable: [String: String])
     case unsupported(unit: String, type: String)
     case localization(error: Error)
