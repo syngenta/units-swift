@@ -44,6 +44,7 @@
 		15E248F622D3C711001D6F87 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E248F522D3C711001D6F87 /* Localizator.swift */; };
 		15E248F822D4B732001D6F87 /* UnitsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E248F722D4B732001D6F87 /* UnitsError.swift */; };
 		15E248FA22D4CB20001D6F87 /* UnitTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E248F922D4CB20001D6F87 /* UnitTypeTests.swift */; };
+		15F8467B29967E2600961B13 /* YieldWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F8467A29967E2600961B13 /* YieldWeight.swift */; };
 		15FC3EDC22CF82E500B0DB2B /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC3EDB22CF82E500B0DB2B /* UnitsType.swift */; };
 		15FC3EDE22CF831900B0DB2B /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC3EDD22CF831900B0DB2B /* Units.swift */; };
 		15FC3EE222CF83D600B0DB2B /* UnitsLocalizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC3EE122CF83D600B0DB2B /* UnitsLocalizator.swift */; };
@@ -93,6 +94,7 @@
 		15E248F522D3C711001D6F87 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		15E248F722D4B732001D6F87 /* UnitsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsError.swift; sourceTree = "<group>"; };
 		15E248F922D4CB20001D6F87 /* UnitTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTypeTests.swift; sourceTree = "<group>"; };
+		15F8467A29967E2600961B13 /* YieldWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldWeight.swift; sourceTree = "<group>"; };
 		15FC3EDB22CF82E500B0DB2B /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
 		15FC3EDD22CF831900B0DB2B /* Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		15FC3EE122CF83D600B0DB2B /* UnitsLocalizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsLocalizator.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				15C3727922CFA6A300E6B841 /* Volume.swift */,
 				15C3727222CFA6A300E6B841 /* WaterRate.swift */,
 				15C3726E22CFA6A200E6B841 /* Weight.swift */,
+				15F8467A29967E2600961B13 /* YieldWeight.swift */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				15C3728322CFA6A300E6B841 /* PrecipitationLevel.swift in Sources */,
 				15FC3EE222CF83D600B0DB2B /* UnitsLocalizator.swift in Sources */,
 				15C3728122CFA6A300E6B841 /* Length.swift in Sources */,
+				15F8467B29967E2600961B13 /* YieldWeight.swift in Sources */,
 				15C3728222CFA6A300E6B841 /* WaterRate.swift in Sources */,
 				15FC3EDE22CF831900B0DB2B /* Units.swift in Sources */,
 				15FC3EDC22CF82E500B0DB2B /* UnitsType.swift in Sources */,

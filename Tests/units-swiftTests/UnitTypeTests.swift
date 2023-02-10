@@ -110,9 +110,13 @@ class UnitTypeTests: XCTestCase {
             XCTAssertEqual(units.waterRate.to(369.89696315500004), 865)
             XCTAssertEqual(units.waterRate.localization.short, "Cuarto/acre")
 
-            XCTAssertEqual(units.weight.from(8712), 871.2)
-            XCTAssertEqual(units.weight.to(871.2), 8712)
+            XCTAssertEqual(units.weight.from(8712), 8712.0)
+            XCTAssertEqual(units.weight.to(871.2), 871.2)
             XCTAssertEqual(units.weight.localization.short, "t")
+
+            XCTAssertEqual(units.yieldWeight.from(8712), 871.2)
+            XCTAssertEqual(units.yieldWeight.to(871.2), 8712)
+            XCTAssertEqual(units.yieldWeight.localization.short, "t")
 
         } catch let error {
             XCTFail("error - \(error)")
@@ -183,9 +187,13 @@ class UnitTypeTests: XCTestCase {
             XCTAssertEqual(units.waterRate.to(369.89696315500004), 369.89696315500004)
             XCTAssertEqual(units.waterRate.localization.short, "л/га")
 
-            XCTAssertEqual(units.weight.from(8712), 8712)
-            XCTAssertEqual(units.weight.to(871.2), 871.2)
+            XCTAssertEqual(units.weight.from(8712), 87120.0)
+            XCTAssertEqual(units.weight.to(871.2), 87.12)
             XCTAssertEqual(units.weight.localization.short, "ц")
+
+            XCTAssertEqual(units.yieldWeight.from(8712), 8712)
+            XCTAssertEqual(units.yieldWeight.to(871.2), 871.2)
+            XCTAssertEqual(units.yieldWeight.localization.short, "ц")
 
         } catch let error {
             XCTFail("error - \(error)")
