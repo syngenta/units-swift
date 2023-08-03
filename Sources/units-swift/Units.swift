@@ -33,12 +33,12 @@ public struct Units {
 
      - Parameters:
         - units: If nil — Units will be created with default units
-        - language: Supported languages — "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - language: Supported languages — "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
 
      - Throws:
         - `UnitsError.notFound` — if `units` not contains needed types
         - `UnitsError.unsupported` — if `units` conteins unsapported unit type
-        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
      */
     public init(units: [String: String]?, language: String) throws {
         do {
@@ -97,10 +97,10 @@ public struct Units {
      Default units
 
      - Parameters:
-        - language: Supported languages — "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - language: Supported languages — "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
 
      - Throws:
-        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
      */
     public static func `default`(language: String) throws -> Units {
         do {
@@ -131,12 +131,12 @@ public struct Units {
 
      - Parameters:
         - units: Units table from cropio api
-        - language: Supported languages — "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - language: Supported languages — "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
 
      - Throws:
         - `UnitsError.notFound` — if `units` not contains needed types
         - `UnitsError.unsupported` — if `units` conteins unsapported unit type
-        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+        - `UnitsError.localization` — if `language` not one of this "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
      */
     public mutating func update(units: [String: String], language: String) throws {
         self = try Units(units: units, language: language)

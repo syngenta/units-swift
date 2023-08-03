@@ -125,7 +125,7 @@ class UnitTypeTests: XCTestCase {
 
     func testDefaultUnits() {
         do {
-            let units = try Units.default(language: "ru")
+            let units = try Units.default(language: "uk")
 
             XCTAssertEqual(units.area.from(242), 242)
             XCTAssertEqual(units.area.to(597.74), 597.74)
@@ -205,13 +205,13 @@ class UnitTypeTests: XCTestCase {
             let units = try Units.default(language: "ro")
             XCTFail("units - \(units)")
         } catch let error {
-            XCTAssertEqual("\(error)", "localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: \"ro\", supported: Optional([\"de\", \"en\", \"uk\", \"es\", \"et\", \"bg\", \"hu\", \"pl\", \"ru\", \"pt\"])))")
+            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
         }
     }
 
     func testUnitsError() {
         do {
-            let units = try Units(units: [:], language: "ru")
+            let units = try Units(units: [:], language: "uk")
             XCTFail("units - \(units)")
         } catch let error {
             XCTAssertEqual("\(error)", "notFound(type: \"area\", inTable: [:])")
@@ -221,13 +221,13 @@ class UnitTypeTests: XCTestCase {
             let units = try Units(units: [:], language: "ro")
             XCTFail("units - \(units)")
         } catch let error {
-            XCTAssertEqual("\(error)", "localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: \"ro\", supported: Optional([\"de\", \"en\", \"uk\", \"es\", \"et\", \"bg\", \"hu\", \"pl\", \"ru\", \"pt\"])))")
+            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
         }
     }
 
     func testUpdateUnits() {
         do {
-            var units = try Units.default(language: "ru")
+            var units = try Units.default(language: "uk")
 
             XCTAssertEqual(units.area.from(242), 242)
             XCTAssertEqual(units.area.to(597.74), 597.74)
