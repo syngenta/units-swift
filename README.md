@@ -41,7 +41,7 @@ let table = [
 ]
 
 do {
-	// Units support this languages - "de", "en", "uk", "es", "et", "hu", "pl", "ru", "pt"
+	// Units support this languages - "de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"
 	let units = try Units(units: table, language: "es")
 
 	print(units.area.from(242)) // 597.74
@@ -56,7 +56,7 @@ do {
 Also you can use default units
 ```swift
 do {
-	let units = try Units.default(language: "ru")
+	let units = try Units.default(language: "uk")
 
 	print(units.area.from(242)) // 242
 	print(units.area.to(597.74)) // 597.74
@@ -96,7 +96,7 @@ do {
 	print(units.area.to(597.74)) // 241.99999999999997
 	print(units.area.localization.short) // "acre"
 
-	try units.update(units: table, language: "ru")
+	try units.update(units: table, language: "uk")
 
 	print(units.area.from(242)) // 597.74
 	print(units.area.to(597.74)) // 241.99999999999997
