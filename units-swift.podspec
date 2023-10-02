@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'units-swift'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'Library for converting units of measurement'
   s.description      = 'This library can convert units of measurement for agro systems'
 
