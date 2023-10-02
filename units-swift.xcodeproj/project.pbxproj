@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		151860712ACAE5F700429C96 /* WindSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151860702ACAE5F700429C96 /* WindSpeed.swift */; };
 		15C3727E22CFA6A300E6B841 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3726E22CFA6A200E6B841 /* Weight.swift */; };
 		15C3727F22CFA6A300E6B841 /* Depth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3726F22CFA6A200E6B841 /* Depth.swift */; };
 		15C3728022CFA6A300E6B841 /* PlantSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C3727022CFA6A200E6B841 /* PlantSpacing.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		151860702ACAE5F700429C96 /* WindSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeed.swift; sourceTree = "<group>"; };
 		15C3726E22CFA6A200E6B841 /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		15C3726F22CFA6A200E6B841 /* Depth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Depth.swift; sourceTree = "<group>"; };
 		15C3727022CFA6A200E6B841 /* PlantSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantSpacing.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				15C3727822CFA6A300E6B841 /* Temperature.swift */,
 				15C3727922CFA6A300E6B841 /* Volume.swift */,
 				15C3727222CFA6A300E6B841 /* WaterRate.swift */,
+				151860702ACAE5F700429C96 /* WindSpeed.swift */,
 				15C3726E22CFA6A200E6B841 /* Weight.swift */,
 				15F8467A29967E2600961B13 /* YieldWeight.swift */,
 			);
@@ -347,6 +350,7 @@
 				15F8467B29967E2600961B13 /* YieldWeight.swift in Sources */,
 				15C3728222CFA6A300E6B841 /* WaterRate.swift in Sources */,
 				15FC3EDE22CF831900B0DB2B /* Units.swift in Sources */,
+				151860712ACAE5F700429C96 /* WindSpeed.swift in Sources */,
 				15FC3EDC22CF82E500B0DB2B /* UnitsType.swift in Sources */,
 				15C3728822CFA6A300E6B841 /* Temperature.swift in Sources */,
 				15C3728422CFA6A300E6B841 /* TankVolume.swift in Sources */,

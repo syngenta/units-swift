@@ -40,6 +40,7 @@ class UnitTypeTests: XCTestCase {
             "temperature": "fahrenheit",
             "precipitation_level": "in",
             "water_rate": "american_quart",
+            "wind_speed": "mile_per_hour",
             "fuel_consumption": "mile_per_uk_gallon",
             "short_length": "ft",
             "depth": "in",
@@ -109,6 +110,10 @@ class UnitTypeTests: XCTestCase {
             XCTAssertEqual(units.waterRate.from(865), 369.89696315500004)
             XCTAssertEqual(units.waterRate.to(369.89696315500004), 865)
             XCTAssertEqual(units.waterRate.localization.short, "Cuarto/acre")
+
+            XCTAssertEqual(units.windSpeed.from(10), 22.369362920544)
+            XCTAssertEqual(units.windSpeed.to(5.6), 2.5034240000000025)
+            XCTAssertEqual(units.windSpeed.localization.short, "mph")
 
             XCTAssertEqual(units.weight.from(8712), 8712.0)
             XCTAssertEqual(units.weight.to(871.2), 871.2)
@@ -187,6 +192,10 @@ class UnitTypeTests: XCTestCase {
             XCTAssertEqual(units.waterRate.to(369.89696315500004), 369.89696315500004)
             XCTAssertEqual(units.waterRate.localization.short, "л/га")
 
+            XCTAssertEqual(units.windSpeed.from(10), 10)
+            XCTAssertEqual(units.windSpeed.to(5.6), 5.6)
+            XCTAssertEqual(units.windSpeed.localization.short, "м/с")
+
             XCTAssertEqual(units.weight.from(8712), 87120.0)
             XCTAssertEqual(units.weight.to(871.2), 87.12)
             XCTAssertEqual(units.weight.localization.short, "ц")
@@ -245,6 +254,7 @@ class UnitTypeTests: XCTestCase {
                 "temperature": "fahrenheit",
                 "precipitation_level": "in",
                 "water_rate": "american_quart",
+                "wind_speed": "mile_per_hour",
                 "fuel_consumption": "mile_per_uk_gallon",
                 "short_length": "ft",
                 "depth": "in",
@@ -299,6 +309,7 @@ class UnitTypeTests: XCTestCase {
                 "temperature": "fahrenheit",
                 "precipitation_level": "in",
                 "water_rate": "american_quart",
+                "wind_speed": "mile_per_hour",
                 "fuel_consumption": "mile_per_uk_gallon",
                 "short_length": "ft",
                 "depth": "in",
@@ -314,12 +325,43 @@ class UnitTypeTests: XCTestCase {
         }
     }
 
+    func testWindSpeedMigration() {
+        let table = [ // table with old wind speed unit
+            "length": "mile",
+            "area": "decare",
+            "weight": "tonn",
+            "machinery_weight": "pound",
+            "volume": "pint",
+            "tank_volume": "american_gallon",
+            "productivity": "kg_per_decare",
+            "speed": "mile_per_hour",
+            "temperature": "fahrenheit",
+            "precipitation_level": "in",
+            "water_rate": "american_quart",
+            "fuel_consumption": "mile_per_uk_gallon",
+            "short_length": "ft",
+            "depth": "in",
+            "row_spacing": "cm",
+            "plant_spacing": "m"
+        ]
+
+        do {
+            let units = try Units(units: table, language: "uk")
+            XCTAssertEqual(units.windSpeed.from(1), 1)
+            XCTAssertEqual(units.windSpeed.localization.short, "м/с")
+        } catch {
+            XCTFail("error - \(error)")
+        }
+    }
+
     static var allTests = [
         ("testFromError", testFromError),
         ("testUnits", testUnits),
         ("testDefaultUnits", testDefaultUnits),
         ("testDefaultUnitsError", testDefaultUnitsError),
         ("testUnitsError", testUnitsError),
-        ("testOptionalExtension", testOptionalExtension)
+        ("testOptionalExtension", testOptionalExtension),
+        ("testDekareUnits", testDekareUnits),
+        ("testWindSpeedMigration", testWindSpeedMigration)
     ]
 }

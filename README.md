@@ -18,7 +18,7 @@ source 'https://github.com/cropio/cocoapods-specs.git'
 ```
 
 ### Use
-For using this lib you need to get units table form cropio api
+For using this lib you need to get units table form **Cropwise Operations** api
 
 ```swift
 let table = [
@@ -33,6 +33,7 @@ let table = [
 	"temperature": "fahrenheit",
 	"precipitation_level": "in",
 	"water_rate": "american_quart",
+	"wind_speed": "m_per_sec",   
 	"fuel_consumption": "mile_per_uk_gallon",
 	"short_length": "ft",
 	"depth": "in",
@@ -80,6 +81,7 @@ let table = [
 	"temperature": "fahrenheit",
 	"precipitation_level": "in",
 	"water_rate": "american_quart",
+	"wind_speed": "m_per_sec",
 	"fuel_consumption": "mile_per_uk_gallon",
 	"short_length": "ft",
 	"depth": "in",
