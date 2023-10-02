@@ -454,6 +454,34 @@ final class UnitsTests: XCTestCase {
 
     }
 
+    func testWindSpeed() {
+        XCTAssertEqual(WindSpeed.code, "wind_speed")
+        do {
+            let mPerSec = try WindSpeed.from("m_per_sec", localizator: self.localizator)
+            XCTAssertEqual(mPerSec.from(3392.106682491515), 3392.106682491515)
+            XCTAssertEqual(mPerSec.to(3392.106682491515), 3392.106682491515)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let kmPerHour = try WindSpeed.from("km_per_hour", localizator: self.localizator)
+            XCTAssertEqual(kmPerHour.from(4524.924480372933), 16289.72812934256)
+            XCTAssertEqual(kmPerHour.to(16289.72812934256), 4524.924480372933)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+        do {
+            let milePerHour = try WindSpeed.from("mile_per_hour", localizator: self.localizator)
+            XCTAssertEqual(milePerHour.from(2975.349130874201), 6655.666452385016)
+            XCTAssertEqual(milePerHour.to(6655.666452385016), 2975.349130874201)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+
+    }
+
     func testShortLength() {
         XCTAssertEqual(ShortLength.code, "short_length")
         do {
@@ -610,6 +638,7 @@ final class UnitsTests: XCTestCase {
         ("testLength", testLength),
         ("testRowSpacing", testRowSpacing),
         ("testWaterRate", testWaterRate),
+        ("testWindSpeed", testWindSpeed),
         ("testShortLength", testShortLength),
         ("testProductivity", testProductivity),
         ("testDepth", testDepth)

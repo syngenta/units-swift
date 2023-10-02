@@ -25,6 +25,7 @@ public struct Units {
     public let temperature: Temperature
     public let volume: Volume
     public let waterRate: WaterRate
+    public let windSpeed: WindSpeed
     public let weight: Weight
     public let yieldWeight: YieldWeight
 
@@ -71,6 +72,9 @@ public struct Units {
             self.volume = try .from(units: units, localizator: localizator)
             self.waterRate = try .from(units: units, localizator: localizator)
             self.weight = try .from(units: units, localizator: localizator)
+            // try? Need for correct migration, some users may have old version of 'units' without 'windSpeed'
+            self.windSpeed = (try? .from(units: units, localizator: localizator))
+                ?? .from(.mPerSec, localizator: localizator) // if not found set default
             self.yieldWeight = try .from(units: units, localizator: localizator)
         } else {
             self.area = .from(.ha, localizator: localizator)
@@ -88,6 +92,7 @@ public struct Units {
             self.temperature = .from(.celsius, localizator: localizator)
             self.volume = .from(.liter, localizator: localizator)
             self.waterRate = .from(.literPerHa, localizator: localizator)
+            self.windSpeed = .from(.mPerSec, localizator: localizator)
             self.weight = .from(.centner, localizator: localizator)
             self.yieldWeight = .from(.centner, localizator: localizator)
         }
