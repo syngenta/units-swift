@@ -13,19 +13,22 @@ public struct WaterRate: TransformableUnitType {
         case literPerHa
         case americanPintPerAcre
         case americanQuart
+        case americanGallonPerAcre
 
         public var factor: Double {
             switch self {
             case .literPerHa: return 1.0
             case .americanPintPerAcre: return 0.855253093
             case .americanQuart: return 0.427626547
+            case .americanGallonPerAcre: return 0.106906637
             }
         }
 
         public static var mappings: [String: Settings] = [
             "liter_per_ha": .literPerHa,
             "american_pint_per_acre": .americanPintPerAcre,
-            "american_quart": .americanQuart
+            "american_quart": .americanQuart,
+            "american_gallon_per_acre": .americanGallonPerAcre
         ]
     }
 
@@ -38,6 +41,7 @@ public struct WaterRate: TransformableUnitType {
         case .literPerHa: return localizator.literPerHa
         case .americanPintPerAcre: return localizator.americanPintPerAcre
         case .americanQuart: return localizator.americanQuart
+        case .americanGallonPerAcre: return localizator.americanGallonPerAcre
         }
     }
 

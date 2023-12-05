@@ -61,4 +61,5 @@ public protocol Localizator {
     var kmPerLiter: Localization { get }
     var literPer100km: Localization { get }
     var milePerUkGallon: Localization { get }
+    var americanGallonPerAcre: Localization { get }
 }

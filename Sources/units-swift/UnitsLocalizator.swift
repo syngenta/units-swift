@@ -215,6 +215,12 @@ public class UnitsLocalizator: Localizator {
             full: self.localized("american_quart_full")
         )
     }
+    public var americanGallonPerAcre: Localization {
+        .init(
+            short: self.localized("american_gallon_per_acre"),
+            full: self.localized("american_gallon_per_acre_full")
+        )
+    }
     public var literPerHa: Localization {
         return .init(
             short: self.localized("liter_per_ha"),
