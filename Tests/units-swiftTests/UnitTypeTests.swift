@@ -354,6 +354,39 @@ class UnitTypeTests: XCTestCase {
         }
     }
 
+    func testAmericanGallonPerAcreUnits() {
+        do {
+            var units = try Units.default(language: "uk")
+            XCTAssertEqual(units.waterRate.localization.short, "л/га")
+
+            let table = [
+                "length": "mile",
+                "area": "decare",
+                "weight": "tonn",
+                "machinery_weight": "pound",
+                "volume": "pint",
+                "tank_volume": "american_gallon",
+                "productivity": "kg_per_decare",
+                "speed": "mile_per_hour",
+                "temperature": "fahrenheit",
+                "precipitation_level": "in",
+                "water_rate": "american_gallon_per_acre", // <<<
+                "wind_speed": "mile_per_hour",
+                "fuel_consumption": "mile_per_uk_gallon",
+                "short_length": "ft",
+                "depth": "in",
+                "row_spacing": "cm",
+                "plant_spacing": "m"
+            ]
+            try units.update(units: table)
+
+            XCTAssertEqual(units.waterRate.localization.short, "гал/акр")
+            XCTAssertEqual(units.waterRate.localization.full, "Американський галон на акр")
+        } catch {
+            XCTFail("error - \(error)")
+        }
+    }
+
     static var allTests = [
         ("testFromError", testFromError),
         ("testUnits", testUnits),
@@ -362,6 +395,7 @@ class UnitTypeTests: XCTestCase {
         ("testUnitsError", testUnitsError),
         ("testOptionalExtension", testOptionalExtension),
         ("testDekareUnits", testDekareUnits),
-        ("testWindSpeedMigration", testWindSpeedMigration)
+        ("testWindSpeedMigration", testWindSpeedMigration),
+        ("testAmericanGallonPerAcreUnits", testAmericanGallonPerAcreUnits)
     ]
 }

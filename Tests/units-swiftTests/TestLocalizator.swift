@@ -58,6 +58,7 @@ struct TestLocalizator: Localizator {
     var americanPintPerAcre: Localization { return .init(short: "", full: "") }
     var americanQuart: Localization { return .init(short: "", full: "") }
     var literPerHa: Localization { return .init(short: "", full: "") }
+    var americanGallonPerAcre: Localization { .init(short: "", full: "") }
 
     var milePerUsGallon: Localization { return .init(short: "", full: "") }
     var kmPerLiter: Localization { return .init(short: "", full: "") }

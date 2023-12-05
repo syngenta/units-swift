@@ -452,6 +452,13 @@ final class UnitsTests: XCTestCase {
             XCTFail("error - \(error)")
         }
 
+        do {
+            let americanQuart = try WaterRate.from("american_gallon_per_acre", localizator: self.localizator)
+            XCTAssertEqual(americanQuart.from(2982.7156091137), 318.8720948977522)
+            XCTAssertEqual(americanQuart.to(1275.4883766082933), 11930.862408554609)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
     }
 
     func testWindSpeed() {
