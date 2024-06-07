@@ -260,7 +260,11 @@ public class UnitsLocalizator: Localizator {
     private let bundle: Bundle
 
     init(language: String) throws {
+        #if SWIFT_PACKAGE
+        let main = Bundle.module
+        #else
         let main = Bundle(for: UnitsLocalizator.self)
+        #endif
 
         let localizable = main.path(forResource: "Localizable", ofType: "bundle")
         .flatMap { Bundle(path: $0) }

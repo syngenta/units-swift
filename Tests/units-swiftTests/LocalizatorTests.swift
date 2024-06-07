@@ -430,7 +430,11 @@ class LocalizatorTests: XCTestCase {
 
     // Is all language tested? Failed if not
     func testCheckTestCount() {
+        #if SWIFT_PACKAGE
+        let main = Bundle.module
+        #else
         let main = Bundle(for: UnitsLocalizator.self)
+        #endif
         let localizable = main.path(forResource: "Localizable", ofType: "bundle")
         .flatMap { Bundle(path: $0) }
 
