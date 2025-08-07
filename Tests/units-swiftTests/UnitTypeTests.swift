@@ -214,7 +214,7 @@ class UnitTypeTests: XCTestCase {
             let units = try Units.default(language: "ro")
             XCTFail("units - \(units)")
         } catch let error {
-            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
+            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "ar", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
         }
     }
 
@@ -230,7 +230,7 @@ class UnitTypeTests: XCTestCase {
             let units = try Units(units: [:], language: "ro")
             XCTFail("units - \(units)")
         } catch let error {
-            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
+            XCTAssertEqual("\(error)", #"localization(error: units_swift.UnitsLocalizator.E.unsupportedLanguage(language: "ro", supported: Optional(["de", "ar", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"])))"#)
         }
     }
 

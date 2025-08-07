@@ -428,6 +428,30 @@ class LocalizatorTests: XCTestCase {
         }
     }
 
+    func testLocalizatorAR() {
+        do {
+            let localizator = try UnitsLocalizator(language: "ar")
+            try self.checkAllLocalizations(language: "ar")
+
+            XCTAssertEqual(localizator.in.short, "in")
+            XCTAssertEqual(localizator.in.full, "بوصة")
+            XCTAssertEqual(localizator.ft.short, "ft")
+            XCTAssertEqual(localizator.ft.full, "قدم")
+            XCTAssertEqual(localizator.mile.short, "mi")
+            XCTAssertEqual(localizator.mile.full, "ميل")
+            XCTAssertEqual(localizator.mm.short, "mm")
+            XCTAssertEqual(localizator.mm.full, "ملليمتر")
+            XCTAssertEqual(localizator.cm.short, "cm")
+            XCTAssertEqual(localizator.cm.full, "سنتيمتر")
+            XCTAssertEqual(localizator.m.short, "m")
+            XCTAssertEqual(localizator.m.full, "متر")
+            XCTAssertEqual(localizator.km.short, "km")
+            XCTAssertEqual(localizator.km.full, "كيلومتر")
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
     // Is all language tested? Failed if not
     func testCheckTestCount() {
         #if SWIFT_PACKAGE
@@ -438,7 +462,7 @@ class LocalizatorTests: XCTestCase {
         let localizable = main.path(forResource: "Localizable", ofType: "bundle")
         .flatMap { Bundle(path: $0) }
 
-        let langs = ["de", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"]
+        let langs = ["de", "ar", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"]
         XCTAssertEqual(localizable?.localizations, langs)
         XCTAssertEqual(localizable?.localizations.count, LocalizatorTests.allTests.count - 1)
     }
@@ -455,6 +479,7 @@ class LocalizatorTests: XCTestCase {
         ("testLocalizatorET", testLocalizatorET),
         ("testLocalizatorBG", testLocalizatorBG),
         ("testLocalizatorCS", testLocalizatorCS),
+        ("testLocalizatorAR", testLocalizatorAR),
         ("testCheckTestCount", testCheckTestCount)
     ]
 }
