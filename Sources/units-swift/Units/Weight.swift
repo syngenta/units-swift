@@ -19,7 +19,7 @@ public struct Weight: TransformableUnitType {
             switch self {
             case .kg: return 1000.0
             case .centner: return 10.0
-            case .pound: return 454.545
+            case .pound: return 2204.6226218488
             case .tonn: return 1.0
             }
         }

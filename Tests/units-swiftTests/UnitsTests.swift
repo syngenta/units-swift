@@ -284,8 +284,8 @@ final class UnitsTests: XCTestCase {
 
         do {
             let pound = try Weight.from("pound", localizator: self.localizator)
-            XCTAssertEqual(pound.from(3346.9854337306824), 1521355.4939751131)
-            XCTAssertEqual(pound.to(737883.1026911336), 1623.3444492649433)
+            XCTAssertEqual(pound.from(3346.9854337306824), 7378839.80220108)
+            XCTAssertEqual(pound.to(737883.1026911336), 334.698145332621)
         } catch let error {
             XCTFail("error - \(error)")
         }
