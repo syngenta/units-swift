@@ -234,6 +234,12 @@ public class UnitsLocalizator: Localizator {
             full: self.localized("liter_per_ha_full")
         )
     }
+    public var fluidOuncePerAcre: Localization {
+        return .init(
+            short: self.localized("fluid_ounce_per_acre"),
+            full: self.localized("fluid_ounce_per_acre_full")
+        )
+    }
 
     public var milePerUsGallon: Localization {
         return .init(

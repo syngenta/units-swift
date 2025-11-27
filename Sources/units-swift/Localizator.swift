@@ -57,6 +57,7 @@ public protocol Localizator {
     var americanPintPerAcre: Localization { get }
     var americanQuart: Localization { get }
     var literPerHa: Localization { get }
+    var fluidOuncePerAcre: Localization { get }
 
     var milePerUsGallon: Localization { get }
     var kmPerLiter: Localization { get }
