@@ -368,6 +368,13 @@ final class UnitsTests: XCTestCase {
             XCTFail("error - \(error)")
         }
 
+        do {
+            let feddan = try Area.from("feddan", localizator: self.localizator)
+            XCTAssertEqual(feddan.from(3773.3900288276077), 8982.486862899968)
+            XCTAssertEqual(feddan.to(3921.8913961567305), 1647.5199033717079)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
     }
 
     func testLength() {

@@ -12,6 +12,7 @@ public protocol Localizator {
     var ha: Localization { get }
     var acre: Localization { get }
     var decare: Localization { get }
+    var feddan: Localization { get }
 
     // MARK: Length
     var `in`: Localization { get }

@@ -14,6 +14,7 @@ struct TestLocalizator: Localizator {
     var ha: Localization { return .init(short: "", full: "") }
     var acre: Localization { return .init(short: "", full: "") }
     var decare: Localization { return .init(short: "", full: "") }
+    var feddan: Localization { return .init(short: "", full: "") }
 
     // MARK: Length
     var `in`: Localization { return .init(short: "", full: "") }

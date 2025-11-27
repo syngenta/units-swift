@@ -306,6 +306,8 @@ class LocalizatorTests: XCTestCase {
 
             XCTAssertEqual(localizator.decare.short, "декар")
             XCTAssertEqual(localizator.decare.full, "Декар")
+            XCTAssertEqual(localizator.feddan.short, "феддан")
+            XCTAssertEqual(localizator.feddan.full, "Феддан")
             XCTAssertEqual(localizator.kgPerDecare.short, "кг/декар")
             XCTAssertEqual(localizator.kgPerDecare.full, "Кілограм на декар")
             XCTAssertEqual(localizator.in.short, "in")
@@ -433,6 +435,9 @@ class LocalizatorTests: XCTestCase {
             let localizator = try UnitsLocalizator(language: "ar")
             try self.checkAllLocalizations(language: "ar")
 
+            XCTAssertEqual(localizator.decare.short, "daa")
+            XCTAssertEqual(localizator.feddan.short, "فدان")
+            XCTAssertEqual(localizator.feddan.full, "فدان")
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "بوصة")
             XCTAssertEqual(localizator.ft.short, "ft")

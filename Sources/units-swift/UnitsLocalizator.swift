@@ -8,6 +8,7 @@
 import Foundation
 
 public class UnitsLocalizator: Localizator {
+
     // MARK: Area
     public var ha: Localization {
         return .init(
@@ -25,6 +26,12 @@ public class UnitsLocalizator: Localizator {
         return .init(
             short: self.localized("decare"),
             full: self.localized("decare_full")
+        )
+    }
+    public var feddan: Localization {
+        return .init(
+            short: self.localized("feddan"),
+            full: self.localized("feddan_full")
         )
     }
 
