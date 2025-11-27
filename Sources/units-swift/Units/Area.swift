@@ -18,9 +18,9 @@ public struct Area: TransformableUnitType {
         public var factor: Double {
             switch self {
             case .ha: 1.0
-            case .acre: 2.47
+            case .acre: 2.471053814671653
             case .decare: 10.0
-            case .feddan: 2.380481952376078
+            case .feddan: 2.380952380952381
             }
         }
 
