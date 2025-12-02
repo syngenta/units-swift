@@ -47,6 +47,10 @@ public protocol Localizator {
     var tonPerHa: Localization { get }
     var centnerPerHa: Localization { get }
     var kgPerDecare: Localization { get }
+    var tonnPerAcre: Localization { get }
+    var kgPerHa: Localization { get }
+    var kgPerAcre: Localization { get }
+    var tonnPerFeddan: Localization { get }
 
     // MARK: Speed
     var mPerSec: Localization { get }

@@ -189,6 +189,34 @@ public class UnitsLocalizator: Localizator {
         )
     }
 
+    public var tonnPerAcre: Localization {
+        .init(
+            short: localized("tonn_per_acre"),
+            full: localized("tonn_per_acre_full")
+        )
+    }
+
+    public var kgPerHa: Localization {
+        .init(
+            short: localized("kg_per_ha"),
+            full: localized("kg_per_ha_full")
+        )
+    }
+
+    public var kgPerAcre: Localization {
+        .init(
+            short: localized("kg_per_acre"),
+            full: localized("kg_per_acre_full")
+        )
+    }
+
+    public var tonnPerFeddan: Localization {
+        .init(
+            short: localized("tonn_per_feddan"),
+            full: localized("tonn_per_feddan_full")
+        )
+    }
+
     // MARK: Speed
     public var mPerSec: Localization {
         return .init(
