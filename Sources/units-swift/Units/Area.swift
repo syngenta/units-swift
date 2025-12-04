@@ -13,31 +13,33 @@ public struct Area: TransformableUnitType {
         case ha
         case acre
         case decare
+        case feddan
 
         public var factor: Double {
             switch self {
-            case .ha: return 1.0
-            case .acre: return 2.47
-            case .decare: return 10.0
+            case .ha: 1.0
+            case .acre: 2.471053814671653
+            case .decare: 10.0
+            case .feddan: 2.380952380952381
             }
         }
 
         public static var mappings: [String: Settings] = [
             "ha": .ha,
             "acre": .acre,
-            "decare": .decare
+            "decare": .decare,
+            "feddan": .feddan
         ]
     }
 
-    public static var code: String {
-        return "area"
-    }
+    public static var code: String { "area" }
 
     public static func localization(settings: Settings, localizator: Localizator) -> Localization {
         switch settings {
-        case .ha: return localizator.ha
-        case .acre: return localizator.acre
-        case .decare: return localizator.decare
+        case .ha: localizator.ha
+        case .acre: localizator.acre
+        case .decare: localizator.decare
+        case .feddan: localizator.feddan
         }
     }
 

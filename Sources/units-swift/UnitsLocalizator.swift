@@ -8,6 +8,7 @@
 import Foundation
 
 public class UnitsLocalizator: Localizator {
+
     // MARK: Area
     public var ha: Localization {
         return .init(
@@ -25,6 +26,12 @@ public class UnitsLocalizator: Localizator {
         return .init(
             short: self.localized("decare"),
             full: self.localized("decare_full")
+        )
+    }
+    public var feddan: Localization {
+        return .init(
+            short: self.localized("feddan"),
+            full: self.localized("feddan_full")
         )
     }
 
@@ -182,6 +189,34 @@ public class UnitsLocalizator: Localizator {
         )
     }
 
+    public var tonnPerAcre: Localization {
+        .init(
+            short: localized("tonn_per_acre"),
+            full: localized("tonn_per_acre_full")
+        )
+    }
+
+    public var kgPerHa: Localization {
+        .init(
+            short: localized("kg_per_ha"),
+            full: localized("kg_per_ha_full")
+        )
+    }
+
+    public var kgPerAcre: Localization {
+        .init(
+            short: localized("kg_per_acre"),
+            full: localized("kg_per_acre_full")
+        )
+    }
+
+    public var tonnPerFeddan: Localization {
+        .init(
+            short: localized("tonn_per_feddan"),
+            full: localized("tonn_per_feddan_full")
+        )
+    }
+
     // MARK: Speed
     public var mPerSec: Localization {
         return .init(
@@ -225,6 +260,12 @@ public class UnitsLocalizator: Localizator {
         return .init(
             short: self.localized("liter_per_ha"),
             full: self.localized("liter_per_ha_full")
+        )
+    }
+    public var fluidOuncePerAcre: Localization {
+        return .init(
+            short: self.localized("fluid_ounce_per_acre"),
+            full: self.localized("fluid_ounce_per_acre_full")
         )
     }
 

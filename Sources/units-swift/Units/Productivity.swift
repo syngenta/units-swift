@@ -12,26 +12,38 @@ public struct Productivity: UnitType {
     public enum Settings: UnitTypeSettings {
         case centnerPerHa
         case tonnPerHa
+        case tonnPerAcre
         case usTonnPerAcre
         case bushelPerAcre
+        case kgPerHa
+        case kgPerAcre
         case kgPerDecare
+        case tonnPerFeddan
 
         public var factor: Double {
             switch self {
             case .centnerPerHa: return 1.0
             case .tonnPerHa: return 0.1
+            case .tonnPerAcre: return 0.040468564224
             case .usTonnPerAcre: return 0.224
             case .bushelPerAcre: return 0.0
+            case .kgPerHa: return 100.0
+            case .kgPerAcre: return 40.468564224
             case .kgPerDecare: return 10.0
+            case .tonnPerFeddan: return 0.042
             }
         }
 
         public static var mappings: [String: Settings] = [
             "centner_per_ha": .centnerPerHa,
             "tonn_per_ha": .tonnPerHa,
+            "tonn_per_acre": .tonnPerAcre,
             "us_tonn_per_acre": .usTonnPerAcre,
             "bushel_per_acre": .bushelPerAcre,
-            "kg_per_decare": .kgPerDecare
+            "kg_per_ha": .kgPerHa,
+            "kg_per_acre": .kgPerAcre,
+            "kg_per_decare": .kgPerDecare,
+            "tonn_per_feddan": .tonnPerFeddan
         ]
     }
 
@@ -43,9 +55,13 @@ public struct Productivity: UnitType {
         switch settings {
         case .centnerPerHa: return localizator.centnerPerHa
         case .tonnPerHa: return localizator.tonPerHa
+        case .tonnPerAcre: return localizator.tonnPerAcre
         case .usTonnPerAcre: return localizator.usTonPerAcre
         case .bushelPerAcre: return localizator.bushelPerAcre
+        case .kgPerHa: return localizator.kgPerHa
+        case .kgPerAcre: return localizator.kgPerAcre
         case .kgPerDecare: return localizator.kgPerDecare
+        case .tonnPerFeddan: return localizator.tonnPerFeddan
         }
     }
 

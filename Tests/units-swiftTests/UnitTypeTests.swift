@@ -51,8 +51,8 @@ class UnitTypeTests: XCTestCase {
         do {
             let units = try Units(units: table, language: "es")
 
-            XCTAssertEqual(units.area.from(242), 597.74)
-            XCTAssertEqual(units.area.to(597.74), 241.99999999999997)
+            XCTAssertEqual(units.area.from(242), 597.9950231505401)
+            XCTAssertEqual(units.area.to(597.9950231505401), 242)
             XCTAssertEqual(units.area.localization.short, "acre")
 
             XCTAssertEqual(units.depth.from(5129), 2019.291336523)
@@ -263,14 +263,14 @@ class UnitTypeTests: XCTestCase {
             ]
             try units.update(units: table)
 
-            XCTAssertEqual(units.area.from(242), 597.74)
-            XCTAssertEqual(units.area.to(597.74), 241.99999999999997)
+            XCTAssertEqual(units.area.from(242), 597.9950231505401)
+            XCTAssertEqual(units.area.to(597.9950231505401), 242)
             XCTAssertEqual(units.area.localization.short, "акр")
 
             try units.update(units: table, language: "en")
 
-            XCTAssertEqual(units.area.from(242), 597.74)
-            XCTAssertEqual(units.area.to(597.74), 241.99999999999997)
+            XCTAssertEqual(units.area.from(242), 597.9950231505401)
+            XCTAssertEqual(units.area.to(597.9950231505401), 242)
             XCTAssertEqual(units.area.localization.short, "acre")
         } catch let error {
             XCTFail("error - \(error)")

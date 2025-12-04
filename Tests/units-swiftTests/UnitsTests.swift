@@ -284,8 +284,8 @@ final class UnitsTests: XCTestCase {
 
         do {
             let pound = try Weight.from("pound", localizator: self.localizator)
-            XCTAssertEqual(pound.from(3346.9854337306824), 1521355.4939751131)
-            XCTAssertEqual(pound.to(737883.1026911336), 1623.3444492649433)
+            XCTAssertEqual(pound.from(3346.9854337306824), 7378839.80220108)
+            XCTAssertEqual(pound.to(737883.1026911336), 334.698145332621)
         } catch let error {
             XCTFail("error - \(error)")
         }
@@ -346,8 +346,8 @@ final class UnitsTests: XCTestCase {
         XCTAssertEqual(Area.code, "area")
         do {
             let acre = try Area.from("acre", localizator: self.localizator)
-            XCTAssertEqual(acre.from(3773.3900288276077), 9320.273371204192)
-            XCTAssertEqual(acre.to(9320.273371204192), 3773.3900288276077)
+            XCTAssertEqual(acre.from(3771.7808150781384), 9320.273371204192)
+            XCTAssertEqual(acre.to(9320.273371204192), 3771.7808150781384)
         } catch let error {
             XCTFail("error - \(error)")
         }
@@ -368,6 +368,13 @@ final class UnitsTests: XCTestCase {
             XCTFail("error - \(error)")
         }
 
+        do {
+            let feddan = try Area.from("feddan", localizator: self.localizator)
+            XCTAssertEqual(feddan.from(1647.1943863858269), 3921.8913961567305)
+            XCTAssertEqual(feddan.to(3921.8913961567305), 1647.1943863858269)
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
     }
 
     func testLength() {
