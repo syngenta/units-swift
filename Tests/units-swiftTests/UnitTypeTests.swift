@@ -227,10 +227,10 @@ class UnitTypeTests: XCTestCase {
         }
 
         do {
-            let units = try Units(units: [:], language: "ro")
+            let units = try Units(units: [:], language: "xx")
             XCTFail("units - \(units)")
         } catch let error {
-            XCTAssertEqual("\(error)", "notFound(type: \"area\", inTable: [:])")
+            XCTAssertTrue("\(error)".contains("unsupportedLanguage(language: \"xx\""))
         }
     }
 
