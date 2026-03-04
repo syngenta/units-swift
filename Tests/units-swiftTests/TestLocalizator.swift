@@ -49,6 +49,10 @@ struct TestLocalizator: Localizator {
     var tonPerHa: Localization { return .init(short: "", full: "") }
     var centnerPerHa: Localization { return .init(short: "", full: "") }
     var kgPerDecare: Localization { return .init(short: "", full: "") }
+    var tonnPerAcre: Localization { return .init(short: "", full: "") }
+    var kgPerHa: Localization { return .init(short: "", full: "") }
+    var kgPerAcre: Localization { return .init(short: "", full: "") }
+    var tonnPerFeddan: Localization { return .init(short: "", full: "") }
 
     // MARK: Speed
     var mPerSec: Localization { return .init(short: "", full: "") }
@@ -60,6 +64,7 @@ struct TestLocalizator: Localizator {
     var americanQuart: Localization { return .init(short: "", full: "") }
     var literPerHa: Localization { return .init(short: "", full: "") }
     var americanGallonPerAcre: Localization { .init(short: "", full: "") }
+    var fluidOuncePerAcre: Localization { return .init(short: "", full: "") }
 
     var milePerUsGallon: Localization { return .init(short: "", full: "") }
     var kmPerLiter: Localization { return .init(short: "", full: "") }

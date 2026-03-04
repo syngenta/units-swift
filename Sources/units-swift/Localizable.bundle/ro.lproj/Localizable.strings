@@ -1,0 +1,139 @@
+// Area
+"ha" = "ha";
+"ha_full" = "Hectar";
+
+"acre" = "ac";
+"acre_full" = "Acru";
+
+"decare" = "daa";
+"decare_full" = "Decare";
+
+"feddan" = "feddan";
+"feddan_full" = "Feddan";
+
+// Length
+"in" = "in";
+"in_full" = "Inch";
+
+"ft" = "ft";
+"ft_full" = "Picior";
+
+"mile" = "mi";
+"mile_full" = "Milă";
+
+"mm" = "mm";
+"mm_full" = "Milimetru";
+
+"cm" = "cm";
+"cm_full" = "Centimetru";
+
+"m" = "m";
+"m_full" = "Metru";
+
+"km" = "km";
+"km_full" = "Kilometru";
+
+// Weight
+"kg" = "kg";
+"kg_full" = "Kilogram";
+
+"pound" = "lb";
+"pound_full" = "Livră";
+
+"centner" = "q";
+"centner_full" = "Chintal";
+
+"ton" = "t";
+"ton_full" = "Tonă";
+
+// Liquids
+"pint" = "pt";
+"pint_full" = "Pintă";
+
+"quart" = "qt";
+"quart_full" = "Quart";
+
+"liter" = "l";
+"liter_full" = "Litru";
+
+"british_gallon" = "gal";
+"british_gallon_full" = "Galon britanic";
+
+"american_gallon" = "gal";
+"american_gallon_full" = "Galon american";
+
+"bushel" = "bu";
+"bushel_full" = "Bușel";
+
+// Temperature
+"celsius" = "°C";
+"celsius_full" = "Grade Celsius";
+
+"fahrenheit" = "°F";
+"fahrenheit_full" = "Grade Fahrenheit";
+
+// Productivity
+"bushel_per_acre" = "bu/ac";
+"bushel_per_acre_full" = "Bușel pe acru";
+
+"ton_per_ha" = "t/ha";
+"ton_per_ha_full" = "Tonă pe hectar";
+
+"centner_per_ha" = "q/ha";
+"centner_per_ha_full" = "Chintal pe hectar";
+
+"us_ton_per_acre" = "t/ac";
+"us_ton_per_acre_full" = "Tonă americană pe acru";
+
+"kg_per_decare" = "kg/daa";
+"kg_per_decare_full" = "Kilogram pe decare";
+
+"tonn_per_acre" = "t/ac";
+"tonn_per_acre_full" = "Tonă pe acru";
+
+"kg_per_ha" = "kg/ha";
+"kg_per_ha_full" = "Kilogram pe hectar";
+
+"kg_per_acre" = "kg/ac";
+"kg_per_acre_full" = "Kilogram pe acru";
+
+"tonn_per_feddan" = "t/feddan";
+"tonn_per_feddan_full" = "Tonă pe feddan";
+
+// Speed
+"m_per_sec" = "m/s";
+"m_per_sec_full" = "Metru pe secundă";
+
+"mile_per_hour" = "mph";
+"mile_per_hour_full" = "Milă pe oră";
+
+"km_per_hour" = "km/h";
+"km_per_hour_full" = "Kilometru pe oră";
+
+// Fuel
+"liter_per_ha" = "l/ha";
+"liter_per_ha_full" = "Litru pe hectar";
+
+"american_pint_per_acre" = "pt/ac";
+"american_pint_per_acre_full" = "Pintă americană pe acru";
+
+"american_quart" = "qt/ac";
+"american_quart_full" = "Quart american pe acru";
+
+"american_gallon_per_acre" = "gal/ac";
+"american_gallon_per_acre_full" = "Galon american pe acru";
+
+"liter_per_100km" = "l/100km";
+"liter_per_100km_full" = "Litru la 100 km";
+
+"km_per_liter" = "km/l";
+"km_per_liter_full" = "Kilometru pe litru";
+
+"mile_per_us_gallon" = "mpg";
+"mile_per_us_gallon_full" = "Milă pe galon american";
+
+"mile_per_uk_gallon" = "mpg";
+"mile_per_uk_gallon_full" = "Milă pe galon britanic";
+
+"fluid_ounce_per_acre" = "fl oz/ac";
+"fluid_ounce_per_acre_full" = "Uncie fluidă pe acru";
