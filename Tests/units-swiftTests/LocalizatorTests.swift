@@ -430,6 +430,50 @@ class LocalizatorTests: XCTestCase {
         }
     }
 
+    func testLocalizatorRO() {
+        do {
+            let localizator = try UnitsLocalizator(language: "ro")
+            try self.checkAllLocalizations(language: "ro")
+
+            XCTAssertEqual(localizator.ha.short, "ha")
+            XCTAssertEqual(localizator.ha.full, "Hectar")
+            XCTAssertEqual(localizator.acre.short, "acru")
+            XCTAssertEqual(localizator.acre.full, "Acru")
+            XCTAssertEqual(localizator.in.short, "in")
+            XCTAssertEqual(localizator.in.full, "Inch")
+            XCTAssertEqual(localizator.ft.short, "ft")
+            XCTAssertEqual(localizator.ft.full, "Picior")
+            XCTAssertEqual(localizator.mile.short, "mi")
+            XCTAssertEqual(localizator.mile.full, "Milă")
+            XCTAssertEqual(localizator.mm.short, "mm")
+            XCTAssertEqual(localizator.mm.full, "Milimetru")
+            XCTAssertEqual(localizator.cm.short, "cm")
+            XCTAssertEqual(localizator.cm.full, "Centimetru")
+            XCTAssertEqual(localizator.m.short, "m")
+            XCTAssertEqual(localizator.m.full, "Metru")
+            XCTAssertEqual(localizator.km.short, "km")
+            XCTAssertEqual(localizator.km.full, "Kilometru")
+            XCTAssertEqual(localizator.kg.short, "kg")
+            XCTAssertEqual(localizator.kg.full, "Kilogram")
+            XCTAssertEqual(localizator.ton.short, "t")
+            XCTAssertEqual(localizator.ton.full, "Tonă")
+            XCTAssertEqual(localizator.liter.short, "l")
+            XCTAssertEqual(localizator.liter.full, "Litru")
+            XCTAssertEqual(localizator.celsius.short, "°C")
+            XCTAssertEqual(localizator.celsius.full, "Grade Celsius")
+            XCTAssertEqual(localizator.fahrenheit.short, "°F")
+            XCTAssertEqual(localizator.fahrenheit.full, "Grade Fahrenheit")
+            XCTAssertEqual(localizator.tonPerHa.short, "t/ha")
+            XCTAssertEqual(localizator.tonPerHa.full, "Tonă pe hectar")
+            XCTAssertEqual(localizator.kmPerHour.short, "km/h")
+            XCTAssertEqual(localizator.kmPerHour.full, "Kilometru pe oră")
+            XCTAssertEqual(localizator.literPerHa.short, "l/ha")
+            XCTAssertEqual(localizator.literPerHa.full, "Litru pe hectar")
+        } catch let error {
+            XCTFail("error - \(error)")
+        }
+    }
+
     func testLocalizatorAR() {
         do {
             let localizator = try UnitsLocalizator(language: "ar")
@@ -467,7 +511,7 @@ class LocalizatorTests: XCTestCase {
         let localizable = main.path(forResource: "Localizable", ofType: "bundle")
         .flatMap { Bundle(path: $0) }
 
-        let langs = ["de", "ar", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt"]
+        let langs = ["de", "ar", "en", "uk", "es", "et", "bg", "cs", "hu", "pl", "ru", "pt", "ro"]
         XCTAssertEqual(localizable?.localizations, langs)
         XCTAssertEqual(localizable?.localizations.count, LocalizatorTests.allTests.count - 1)
     }
@@ -485,6 +529,7 @@ class LocalizatorTests: XCTestCase {
         ("testLocalizatorBG", testLocalizatorBG),
         ("testLocalizatorCS", testLocalizatorCS),
         ("testLocalizatorAR", testLocalizatorAR),
+        ("testLocalizatorRO", testLocalizatorRO),
         ("testCheckTestCount", testCheckTestCount)
     ]
 }
