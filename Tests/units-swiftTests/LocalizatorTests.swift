@@ -437,7 +437,7 @@ class LocalizatorTests: XCTestCase {
 
             XCTAssertEqual(localizator.ha.short, "ha")
             XCTAssertEqual(localizator.ha.full, "Hectar")
-            XCTAssertEqual(localizator.acre.short, "acru")
+            XCTAssertEqual(localizator.acre.short, "ac")
             XCTAssertEqual(localizator.acre.full, "Acru")
             XCTAssertEqual(localizator.in.short, "in")
             XCTAssertEqual(localizator.in.full, "Inch")

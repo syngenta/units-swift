@@ -2,7 +2,7 @@
 "ha" = "ha";
 "ha_full" = "Hectar";
 
-"acre" = "acru";
+"acre" = "ac";
 "acre_full" = "Acru";
 
 "decare" = "daa";
@@ -47,10 +47,10 @@
 "ton_full" = "Tonă";
 
 // Liquids
-"pint" = "pinte";
+"pint" = "pt";
 "pint_full" = "Pintă";
 
-"quart" = "quart";
+"quart" = "qt";
 "quart_full" = "Quart";
 
 "liter" = "l";
@@ -73,7 +73,7 @@
 "fahrenheit_full" = "Grade Fahrenheit";
 
 // Productivity
-"bushel_per_acre" = "bu/acru";
+"bushel_per_acre" = "bu/ac";
 "bushel_per_acre_full" = "Bușel pe acru";
 
 "ton_per_ha" = "t/ha";
@@ -82,19 +82,19 @@
 "centner_per_ha" = "q/ha";
 "centner_per_ha_full" = "Chintal pe hectar";
 
-"us_ton_per_acre" = "t/acru";
+"us_ton_per_acre" = "t/ac";
 "us_ton_per_acre_full" = "Tonă americană pe acru";
 
 "kg_per_decare" = "kg/daa";
 "kg_per_decare_full" = "Kilogram pe decare";
 
-"tonn_per_acre" = "t/acru";
+"tonn_per_acre" = "t/ac";
 "tonn_per_acre_full" = "Tonă pe acru";
 
 "kg_per_ha" = "kg/ha";
 "kg_per_ha_full" = "Kilogram pe hectar";
 
-"kg_per_acre" = "kg/acru";
+"kg_per_acre" = "kg/ac";
 "kg_per_acre_full" = "Kilogram pe acru";
 
 "tonn_per_feddan" = "t/feddan";
@@ -104,7 +104,7 @@
 "m_per_sec" = "m/s";
 "m_per_sec_full" = "Metru pe secundă";
 
-"mile_per_hour" = "mi/h";
+"mile_per_hour" = "mph";
 "mile_per_hour_full" = "Milă pe oră";
 
 "km_per_hour" = "km/h";
@@ -114,13 +114,13 @@
 "liter_per_ha" = "l/ha";
 "liter_per_ha_full" = "Litru pe hectar";
 
-"american_pint_per_acre" = "pinte/acru";
+"american_pint_per_acre" = "pt/ac";
 "american_pint_per_acre_full" = "Pintă americană pe acru";
 
-"american_quart" = "quarts/acru";
+"american_quart" = "qt/ac";
 "american_quart_full" = "Quart american pe acru";
 
-"american_gallon_per_acre" = "gal/acru";
+"american_gallon_per_acre" = "gal/ac";
 "american_gallon_per_acre_full" = "Galon american pe acru";
 
 "liter_per_100km" = "l/100km";
@@ -135,5 +135,5 @@
 "mile_per_uk_gallon" = "mpg";
 "mile_per_uk_gallon_full" = "Milă pe galon britanic";
 
-"fluid_ounce_per_acre" = "fl oz/acru";
+"fluid_ounce_per_acre" = "fl oz/ac";
 "fluid_ounce_per_acre_full" = "Uncie fluidă pe acru";
